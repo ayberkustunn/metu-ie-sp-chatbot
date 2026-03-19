@@ -38,7 +38,7 @@ User Question
 
 ```bash
 # 1. Clone the repository
-git clone <your-repo-url>
+git clone https://github.com/ayberkustunn/metu-ie-sp-chatbot.git
 cd metu-ie-sp-chatbot
 
 # 2. Install dependencies
