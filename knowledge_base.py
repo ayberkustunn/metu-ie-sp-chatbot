@@ -470,6 +470,23 @@ KNOWLEDGE_CHUNKS = [
         ),
     },
     {
+        "id": "prerequisite-chain",
+        "topic": "Prerequisite Chain for IE Courses",
+        "source_url": "https://ie.metu.edu.tr/en/prerequisite-chain",
+        "page_title": "Prerequisite Chain",
+        "content": (
+            "The prerequisite chain for METU IE courses can be found at "
+            "ie.metu.edu.tr/en/prerequisite-chain. IE 300 (Summer Practice I) and "
+            "IE 400 (Summer Practice II) are part of the undergraduate curriculum. "
+            "Students should check the prerequisite chain to understand which courses "
+            "must be completed before registering for IE 300 and IE 400. "
+            "The full BS Industrial Engineering curriculum is available at "
+            "ie.metu.edu.tr/en/bs-industrial-engineering-curriculum. "
+            "The Turkish version of the curriculum is at "
+            "ie.metu.edu.tr/tr/endustri-muhendisligi-lisans-ogretim-programi."
+        ),
+    },
+    {
         "id": "ie400-overview",
         "topic": "IE 400 Summer Practice Overview",
         "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
@@ -547,6 +564,17 @@ CURATED_FAQ = [
             "institution, no action needed for paid SP forms."
         ),
         "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
+    },
+    {
+        "question": "What are the prerequisites for IE 300 and IE 400?",
+        "answer": (
+            "You can find the full prerequisite chain for all IE courses including "
+            "IE 300 and IE 400 at ie.metu.edu.tr/en/prerequisite-chain. "
+            "The complete IE curriculum is at ie.metu.edu.tr/en/bs-industrial-engineering-curriculum "
+            "(Turkish version: ie.metu.edu.tr/tr/endustri-muhendisligi-lisans-ogretim-programi). "
+            "Check these pages to see which courses you need to complete before registering."
+        ),
+        "source_url": "https://ie.metu.edu.tr/en/prerequisite-chain",
     },
     {
         "question": "Can foreign students do voluntary internships?",
