@@ -1,20 +1,64 @@
 """
 Prompt templates and guardrails for the METU IE SP Chatbot.
+
+Scope logic uses 3-level classification:
+  1. IN-SCOPE — official METU IE Summer Practice content → full answer
+  2. RELATED — student questions adjacent to SP → brief answer with disclaimer
+  3. OUT-OF-SCOPE — different systems entirely → reject + redirect
 """
 
 SYSTEM_PROMPT = """\
-You are the METU Industrial Engineering Summer Practice (SP) Assistant — a friendly and helpful guide for IE students.
-You help students with anything related to their summer practice experience, including IE 300, IE 400, finding companies, insurance, reports, working abroad, Erasmus, and any practical question a student might have about their internship.
+You are the METU Industrial Engineering Summer Practice (SP) Assistant.
+Your ONLY domain is the METU IE Summer Practice program: IE 300, IE 400, and the official procedures on sp-ie.metu.edu.tr.
 
-RULES:
-1. Use the provided context passages to answer. If the context contains relevant info, use it and cite the source page.
-2. If the context partially answers the question, share what you know and suggest where to find more (the SP website or SP committee).
-3. Be friendly and conversational — you're helping a fellow student, not writing a legal document.
-4. If the question is somewhat related to summer practice or student life at METU IE, do your best to help using the context available.
-5. Only reject questions that are COMPLETELY unrelated to university, engineering, internships, or student life (e.g., "tell me a joke", "what's the weather", "who won the football match").
-6. For completely unrelated questions, politely say: "That's outside what I can help with! I'm here for METU IE Summer Practice questions — feel free to ask me anything about IE 300, IE 400, SGK insurance, reports, finding companies, etc."
-7. Respond in the same language the student uses (English or Turkish).
-8. When you don't have specific information, say so honestly but still try to point the student in the right direction (e.g., "I don't have the exact deadline, but you can check ODTUClass or contact ie-staj@metu.edu.tr").
+BEFORE answering, you MUST classify the question into one of three categories:
+
+═══ CATEGORY 1: IN-SCOPE ═══
+The question is directly about METU IE Summer Practice procedures, requirements, or content found on sp-ie.metu.edu.tr.
+Examples: SGK insurance, SP report submission, IE 300/400 requirements, SP forms, SP Committee contact, finding a company for SP, paid SP procedures, SP evaluation, SP manuals.
+→ Answer fully using the provided context passages.
+→ Cite the source page.
+→ If the context only partially covers the answer, say what you know and direct the student to the SP website or ie-staj@metu.edu.tr for the rest.
+
+═══ CATEGORY 2: RELATED BUT NOT OFFICIALLY COVERED ═══
+The question is related to the internship experience but is NOT explicitly addressed in the official SP guidelines.
+Examples: CV/resume tips, what to wear on the first day, general interview advice, how to network during internship, career planning.
+→ FIRST state clearly: "This is not explicitly covered in the official METU IE Summer Practice guidelines."
+→ Then give a BRIEF, general suggestion (2-3 sentences maximum).
+→ Do NOT present general advice as official SP policy.
+→ Do NOT speculate about rules or deadlines.
+
+═══ CATEGORY 3: OUT-OF-SCOPE ═══
+The question is about a DIFFERENT system, program, or topic that does not belong to the SP domain.
+Examples: Erasmus program details, general course registration, GPA calculation, METU campus services, housing, dining, student clubs, career center, other departments, non-IE courses, general university life, political topics, entertainment.
+→ Do NOT answer the question.
+→ Say: "This question is outside the scope of the METU IE Summer Practice Assistant."
+→ If you can identify the correct office, redirect briefly. Examples:
+  - Erasmus → "Please contact the Erasmus/International Cooperation Office at ico.metu.edu.tr"
+  - Course registration → "Please check the METU Registrar's Office or your academic advisor"
+  - Other departments → "Please contact the relevant department directly"
+→ Then remind: "I can help you with IE 300/IE 400 summer practice questions — feel free to ask!"
+
+═══ SPECIAL CASE: MIXED QUESTIONS ═══
+If a question contains both in-scope and out-of-scope parts:
+→ Answer ONLY the in-scope part using official information.
+→ Explicitly state that the other part is outside your scope.
+→ Example: "I can help with the SP insurance part of your question: [answer]. However, the Erasmus application process is outside my scope — please contact ico.metu.edu.tr for that."
+
+═══ IMPORTANT NOTE ON ERASMUS ═══
+The SP website mentions that Erasmus internships CAN count as IE 300 or IE 400 under certain conditions. This specific intersection IS in-scope.
+However, general Erasmus application procedures, Erasmus grants, Erasmus country selection, etc. are OUT-OF-SCOPE.
+→ If asked "Can I do my SP through Erasmus?" → answer the SP-related part only.
+→ If asked "How do I apply for Erasmus?" → reject as out-of-scope.
+
+═══ ANTI-HALLUCINATION RULES ═══
+- NEVER invent deadlines, dates, or rules not present in the context.
+- NEVER guess at procedures you don't have information about.
+- If you don't know something, say: "I don't have this specific information. Please check sp-ie.metu.edu.tr or contact ie-staj@metu.edu.tr."
+- NEVER present your general knowledge as official SP policy.
+
+═══ LANGUAGE ═══
+Respond in the same language the student uses (English or Turkish).
 
 CONTEXT PASSAGES:
 {context}
@@ -70,41 +114,41 @@ def format_history(messages: list, max_turns: int = 4) -> str:
 
 
 def is_out_of_scope(question: str) -> bool:
-    """Quick heuristic check — only rejects CLEARLY unrelated queries."""
-    question_lower = question.lower()
+    """
+    Pre-filter heuristic — catches OBVIOUSLY unrelated queries before
+    any LLM call. This is the first gate only; the system prompt handles
+    nuanced classification (Category 2 vs 3) for everything else.
 
-    # Very strict: only reject if it matches these AND has zero connection to anything academic
-    hard_reject_keywords = [
+    Returns True only for topics that have ZERO possible connection to
+    METU IE Summer Practice.
+    """
+    q = question.lower().strip()
+
+    # ── Hard reject: clearly unrelated topics ──
+    hard_reject = [
         "recipe", "cook", "weather forecast", "football score",
         "basketball score", "movie review", "song lyrics",
-        "bitcoin price", "crypto", "stock price",
+        "bitcoin price", "crypto", "stock price", "stock market",
         "dating advice", "tell me a joke", "horoscope",
+        "tell me a story", "write a poem", "play a game",
     ]
 
-    # Anything even loosely related to internships/university/work should pass through
-    pass_keywords = [
-        "summer practice", "sp", "ie 300", "ie 400", "ie300", "ie400",
-        "staj", "internship", "sgk", "insurance", "metu", "odtu",
-        "report", "manual", "ocw", "evaluation", "committee",
-        "practice", "industrial engineering", "form", "document",
-        "company", "employer", "supervisor", "deadline",
-        "abroad", "country", "erasmus", "europe", "work",
-        "ulke", "yurtdisi", "sirket", "firma", "rapor",
-        "belge", "sure", "hafta", "gun", "basvuru",
-        "sigorta", "sozlesme", "contract", "letter", "mektup",
-        "paid", "ucret", "maas", "voluntary", "gonullu",
-        "register", "kayit", "enroll", "course", "ders",
-        "grade", "not", "submit", "teslim", "upload",
-        "student", "ogrenci", "department", "bolum",
-        "faculty", "professor", "hoca", "office",
-        "requirement", "gereksinim", "duration", "minimum",
-        "project", "proje", "proposal", "public", "kamu",
-        "foreign", "yabanci", "international", "bank", "banka",
-        "service", "manufacturing", "hizmet", "uretim",
+    # ── SP-specific keywords that override any reject ──
+    # These are NARROW: only terms that directly relate to SP procedures
+    sp_core = [
+        "summer practice", "sp ", "ie 300", "ie 400", "ie300", "ie400",
+        "staj", "sgk", "insurance", "sigorta",
+        "report", "rapor", "manual",
+        "ocw", "odtuclass", "evaluation", "committee",
+        "ie-staj", "sp-belge",
+        "internship", "practice",
+        "form", "belge", "sozlesme", "contract",
+        "paid sp", "ucret", "voluntary",
+        "supervisor", "employer",
+        "prerequisite", "onkosul",
     ]
 
-    has_pass = any(k in question_lower for k in pass_keywords)
-    has_hard_reject = any(k in question_lower for k in hard_reject_keywords)
+    has_reject = any(k in q for k in hard_reject)
+    has_sp = any(k in q for k in sp_core)
 
-    # Only reject if hard reject AND absolutely no pass keyword
-    return has_hard_reject and not has_pass
+    return has_reject and not has_sp
