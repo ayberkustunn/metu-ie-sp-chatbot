@@ -91,6 +91,8 @@ if IS_DARK:
     st.markdown("""
     <style>
     .stApp { background-color: #0f1117 !important; color: #e6e6e9 !important; }
+    header[data-testid="stHeader"],
+    .stApp > header { background-color: #0f1117 !important; }
     section[data-testid="stSidebar"] > div { background-color: #16181f !important; }
     [data-testid="stSidebar"] p, [data-testid="stSidebar"] li,
     [data-testid="stSidebar"] span, [data-testid="stSidebar"] label { color: #c8c8cc !important; }
@@ -125,6 +127,8 @@ else:
     st.markdown("""
     <style>
     .stApp { background-color: #fafafa !important; color: #1a1a2e !important; }
+    header[data-testid="stHeader"],
+    .stApp > header { background-color: #fafafa !important; }
     section[data-testid="stSidebar"] > div { background-color: #ffffff !important; }
     [data-testid="stSidebar"] p, [data-testid="stSidebar"] li,
     [data-testid="stSidebar"] span, [data-testid="stSidebar"] label { color: #4a4a5a !important; }
