@@ -102,8 +102,18 @@ if IS_DARK:
     .stMarkdown p, .stMarkdown li, .stMarkdown span { color: #e2e2e6 !important; }
     .stMarkdown strong { color: #FF6B80 !important; }
     .stMarkdown a { color: #7eb4f5 !important; }
-    [data-testid="stChatInput"] { background-color: #1a1c24 !important; border-color: #2a2d38 !important; }
-    [data-testid="stChatInput"] textarea { color: #e2e2e6 !important; }
+    /* Chat input — target every possible container Streamlit uses */
+    [data-testid="stChatInput"],
+    [data-testid="stChatInput"] > div,
+    [data-testid="stBottom"],
+    [data-testid="stBottom"] > div,
+    [data-testid="stBottom"] [data-testid="stChatInput"],
+    .stChatInput,
+    .stChatInputContainer { background-color: #1a1c24 !important; border-color: #2a2d38 !important; }
+    [data-testid="stChatInput"] textarea,
+    [data-testid="stBottom"] textarea { color: #e2e2e6 !important; background-color: #1a1c24 !important; }
+    [data-testid="stChatInput"] button,
+    [data-testid="stBottom"] button { color: #e2e2e6 !important; }
     .src-pill { color: #9ab0cc !important; border-color: rgba(150,170,200,0.25) !important; background: #1a1c24 !important; }
     .stButton > button { background-color: #1a1c24 !important; color: #c8c8cc !important; border-color: #2a2d38 !important; }
     .stButton > button:hover { background-color: #252830 !important; border-color: #C8102E !important; }
@@ -126,8 +136,18 @@ else:
     .stMarkdown, .stMarkdown p, .stMarkdown li, .stMarkdown span { color: #2a2a3e !important; }
     .stMarkdown strong { color: #C8102E !important; }
     .stMarkdown a { color: #1a5fb4 !important; }
-    [data-testid="stChatInput"] { background-color: #ffffff !important; border-color: #e0e0e8 !important; }
-    [data-testid="stChatInput"] textarea { color: #1a1a2e !important; }
+    /* Chat input — target every possible container */
+    [data-testid="stChatInput"],
+    [data-testid="stChatInput"] > div,
+    [data-testid="stBottom"],
+    [data-testid="stBottom"] > div,
+    [data-testid="stBottom"] [data-testid="stChatInput"],
+    .stChatInput,
+    .stChatInputContainer { background-color: #ffffff !important; border-color: #e0e0e8 !important; }
+    [data-testid="stChatInput"] textarea,
+    [data-testid="stBottom"] textarea { color: #1a1a2e !important; background-color: #ffffff !important; }
+    [data-testid="stChatInput"] button,
+    [data-testid="stBottom"] button { color: #1a1a2e !important; }
     .src-pill { color: #4a5f78 !important; border-color: rgba(0,0,0,0.1) !important; background: #f0f0f5 !important; }
     .stButton > button { background-color: #ffffff !important; color: #2a2a3e !important; border-color: #e0e0e8 !important; }
     .stButton > button:hover { background-color: #f5f5fa !important; border-color: #C8102E !important; }
