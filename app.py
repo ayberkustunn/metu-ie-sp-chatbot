@@ -92,11 +92,14 @@ if IS_DARK:
     <style>
     .stApp { background-color: #0f1117 !important; color: #e6e6e9 !important; }
     section[data-testid="stSidebar"] > div { background-color: #16181f !important; }
-    [data-testid="stSidebar"] * { color: #c8c8cc !important; }
+    [data-testid="stSidebar"] p, [data-testid="stSidebar"] li,
+    [data-testid="stSidebar"] span, [data-testid="stSidebar"] label { color: #c8c8cc !important; }
     [data-testid="stSidebar"] a { color: #7eb4f5 !important; }
     [data-testid="stSidebar"] strong { color: #e0e0e3 !important; }
+    .brand-title { color: #FF4D6A !important; }
+    .brand-sub { color: #888 !important; }
     .stChatMessage { background: transparent !important; border: none !important; }
-    .stMarkdown, .stMarkdown p, .stMarkdown li, .stMarkdown span { color: #e2e2e6 !important; }
+    .stMarkdown p, .stMarkdown li, .stMarkdown span { color: #e2e2e6 !important; }
     .stMarkdown strong { color: #FF6B80 !important; }
     .stMarkdown a { color: #7eb4f5 !important; }
     [data-testid="stChatInput"] { background-color: #1a1c24 !important; border-color: #2a2d38 !important; }
@@ -105,7 +108,6 @@ if IS_DARK:
     .stButton > button { background-color: #1a1c24 !important; color: #c8c8cc !important; border-color: #2a2d38 !important; }
     .stButton > button:hover { background-color: #252830 !important; border-color: #C8102E !important; }
     h1, h2, h3, h4, h5 { color: #e6e6e9 !important; }
-    .stDivider { border-color: rgba(255,255,255,0.06) !important; }
     .wh h2 { color: #e6e6e9 !important; }
     </style>
     """, unsafe_allow_html=True)
@@ -114,9 +116,12 @@ else:
     <style>
     .stApp { background-color: #fafafa !important; color: #1a1a2e !important; }
     section[data-testid="stSidebar"] > div { background-color: #ffffff !important; }
-    [data-testid="stSidebar"] * { color: #4a4a5a !important; }
+    [data-testid="stSidebar"] p, [data-testid="stSidebar"] li,
+    [data-testid="stSidebar"] span, [data-testid="stSidebar"] label { color: #4a4a5a !important; }
     [data-testid="stSidebar"] a { color: #1a5fb4 !important; }
     [data-testid="stSidebar"] strong { color: #1a1a2e !important; }
+    .brand-title { color: #C8102E !important; }
+    .brand-sub { color: #888 !important; }
     .stChatMessage { background: transparent !important; border: none !important; }
     .stMarkdown, .stMarkdown p, .stMarkdown li, .stMarkdown span { color: #2a2a3e !important; }
     .stMarkdown strong { color: #C8102E !important; }
@@ -142,10 +147,10 @@ with st.sidebar:
         f'<img src="data:image/png;base64,{METU_LOGO}" width="30" height="30"'
         f' style="border-radius:6px;background:#111;padding:2px;"/>'
         f'<div>'
-        f'<div style="font-size:0.88rem;font-weight:800;color:#C8102E !important;line-height:1.15;">'
+        f'<div class="brand-title" style="font-size:0.88rem;font-weight:800;line-height:1.15;">'
         f'IE Summer Practice<br>Assistant</div>'
-        f'<div style="font-size:0.5rem;text-transform:uppercase;letter-spacing:0.1em;'
-        f'opacity:0.35;font-weight:700;">METU Industrial Engineering</div>'
+        f'<div class="brand-sub" style="font-size:0.5rem;text-transform:uppercase;letter-spacing:0.1em;'
+        f'font-weight:700;">METU Industrial Engineering</div>'
         f'</div></div>',
         unsafe_allow_html=True,
     )
