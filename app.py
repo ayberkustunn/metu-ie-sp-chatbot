@@ -119,12 +119,15 @@ if IS_DARK:
     .brand-title { color: #FF6B82 !important; }
     .brand-sub { color: #9a9aa0 !important; }
     .stChatMessage { background: transparent !important; border: none !important; }
-    /* Scope text colors to main area only */
-    [data-testid="stMain"] .stMarkdown p,
-    [data-testid="stMain"] .stMarkdown li,
-    [data-testid="stMain"] .stMarkdown span { color: #e2e2e6 !important; }
-    [data-testid="stMain"] .stMarkdown strong { color: #FF6B80 !important; }
-    [data-testid="stMain"] .stMarkdown a { color: #7eb4f5 !important; }
+    /* Main area text colors — exclude sidebar */
+    .stApp .stMarkdown p,
+    .stApp .stMarkdown li,
+    .stApp .stMarkdown span { color: #e2e2e6 !important; }
+    .stApp .stMarkdown strong { color: #FF6B80 !important; }
+    .stApp .stMarkdown a { color: #7eb4f5 !important; }
+    /* Re-apply sidebar-specific overrides */
+    [data-testid="stSidebar"] .stMarkdown p,
+    [data-testid="stSidebar"] .stMarkdown li { color: #c8c8cc !important; }
     /* Chat input */
     [data-testid="stChatInput"],
     [data-testid="stChatInput"] > div,
@@ -135,11 +138,11 @@ if IS_DARK:
     [data-testid="stChatInput"] button,
     [data-testid="stBottom"] button { color: #e2e2e6 !important; }
     .src-pill { color: #9ab0cc !important; border-color: rgba(150,170,200,0.25) !important; background: #1a1c24 !important; }
-    /* Scope button styling to main area only */
-    [data-testid="stMain"] .stButton > button { background-color: #1a1c24 !important; color: #c8c8cc !important; border-color: #2a2d38 !important; }
-    [data-testid="stMain"] .stButton > button:hover { background-color: #252830 !important; border-color: #C8102E !important; }
-    [data-testid="stSidebar"] .stButton > button { background-color: #1e2028 !important; color: #c8c8cc !important; border-color: #2a2d38 !important; }
-    [data-testid="stSidebar"] .stButton > button:hover { background-color: #252830 !important; border-color: #C8102E !important; }
+    /* Scope button styling — global then sidebar override */
+    .stButton > button { background-color: #1a1c24 !important; color: #c8c8cc !important; border-color: #2a2d38 !important; }
+    .stButton > button:hover { background-color: #252830 !important; border-color: #C8102E !important; color: #e6e6e9 !important; }
+    [data-testid="stSidebar"] .stButton > button { background-color: #1e2028 !important; }
+    [data-testid="stSidebar"] .stButton > button:hover { background-color: #252830 !important; }
     h1, h2, h3, h4, h5 { color: #e6e6e9 !important; }
     .wh h2 { color: #e6e6e9 !important; }
     </style>
@@ -161,12 +164,15 @@ else:
     .brand-title { color: #C8102E !important; }
     .brand-sub { color: #888 !important; }
     .stChatMessage { background: transparent !important; border: none !important; }
-    /* Scope text colors to main area only */
-    [data-testid="stMain"] .stMarkdown p,
-    [data-testid="stMain"] .stMarkdown li,
-    [data-testid="stMain"] .stMarkdown span { color: #2a2a3e !important; }
-    [data-testid="stMain"] .stMarkdown strong { color: #C8102E !important; }
-    [data-testid="stMain"] .stMarkdown a { color: #1a5fb4 !important; }
+    /* Main area text colors — exclude sidebar */
+    .stApp .stMarkdown p,
+    .stApp .stMarkdown li,
+    .stApp .stMarkdown span { color: #2a2a3e !important; }
+    .stApp .stMarkdown strong { color: #C8102E !important; }
+    .stApp .stMarkdown a { color: #1a5fb4 !important; }
+    /* Re-apply sidebar-specific overrides */
+    [data-testid="stSidebar"] .stMarkdown p,
+    [data-testid="stSidebar"] .stMarkdown li { color: #4a4a5a !important; }
     /* Chat input */
     [data-testid="stChatInput"],
     [data-testid="stChatInput"] > div,
@@ -177,11 +183,11 @@ else:
     [data-testid="stChatInput"] button,
     [data-testid="stBottom"] button { color: #1a1a2e !important; }
     .src-pill { color: #4a5f78 !important; border-color: rgba(0,0,0,0.1) !important; background: #f0f0f5 !important; }
-    /* Scope button styling to main area only */
-    [data-testid="stMain"] .stButton > button { background-color: #ffffff !important; color: #2a2a3e !important; border-color: #e0e0e8 !important; }
-    [data-testid="stMain"] .stButton > button:hover { background-color: #f5f5fa !important; border-color: #C8102E !important; }
-    [data-testid="stSidebar"] .stButton > button { background-color: #f0f0f5 !important; color: #2a2a3e !important; border-color: #e0e0e8 !important; }
-    [data-testid="stSidebar"] .stButton > button:hover { background-color: #e8e8ed !important; border-color: #C8102E !important; }
+    /* Scope button styling — global then sidebar override */
+    .stButton > button { background-color: #ffffff !important; color: #2a2a3e !important; border-color: #e0e0e8 !important; }
+    .stButton > button:hover { background-color: #f5f5fa !important; border-color: #C8102E !important; color: #1a1a2e !important; }
+    [data-testid="stSidebar"] .stButton > button { background-color: #f0f0f5 !important; }
+    [data-testid="stSidebar"] .stButton > button:hover { background-color: #e8e8ed !important; }
     h1, h2, h3, h4, h5 { color: #1a1a2e !important; }
     .wh h2 { color: #1a1a2e !important; }
     </style>
