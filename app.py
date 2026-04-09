@@ -88,7 +88,7 @@ div[data-testid="manage-app-button"] { display: none; }
     box-shadow: 0 3px 12px rgba(200,16,46,0.18);
 }
 .li {
-    width: 52px; height: 52px; border-radius: 50%; background: #111;
+    width: 52px; height: 52px; border-radius: 50%;
     display: flex; align-items: center; justify-content: center; overflow: hidden;
 }
 .li img { width: 40px; height: 40px; object-fit: contain; }
@@ -108,7 +108,8 @@ if IS_DARK:
     .stApp { background-color: #0f1117 !important; color: #e6e6e9 !important; }
     header[data-testid="stHeader"],
     .stApp > header { background-color: #0f1117 !important; }
-    section[data-testid="stSidebar"] > div { background-color: #16181f !important; }
+    section[data-testid="stSidebar"] > div:first-child { background-color: #16181f !important; }
+    .li { background: #111 !important; }
     [data-testid="stSidebar"] p, [data-testid="stSidebar"] li,
     [data-testid="stSidebar"] span, [data-testid="stSidebar"] label { color: #c8c8cc !important; }
     [data-testid="stSidebar"] a { color: #7eb4f5 !important; }
@@ -144,7 +145,8 @@ else:
     .stApp { background-color: #fafafa !important; color: #1a1a2e !important; }
     header[data-testid="stHeader"],
     .stApp > header { background-color: #fafafa !important; }
-    section[data-testid="stSidebar"] > div { background-color: #ffffff !important; }
+    section[data-testid="stSidebar"] > div:first-child { background-color: #ffffff !important; }
+    .li { background: #ffffff !important; }
     [data-testid="stSidebar"] p, [data-testid="stSidebar"] li,
     [data-testid="stSidebar"] span, [data-testid="stSidebar"] label { color: #4a4a5a !important; }
     [data-testid="stSidebar"] a { color: #1a5fb4 !important; }
@@ -240,6 +242,13 @@ with st.sidebar:
 
     st.divider()
 
+    # ── Clear Chat ──
+    if st.button("🗑️ Clear conversation", use_container_width=True):
+        st.session_state.messages = []
+        st.rerun()
+
+    st.divider()
+
     # ── Contact ──
     st.markdown("**📬 Contact**")
     st.caption("📧 ie-staj@metu.edu.tr")
@@ -253,7 +262,9 @@ with st.sidebar:
 @st.cache_resource
 def get_client():
     api_key = st.secrets.get("OPENAI_API_KEY", "")
-    return OpenAI(api_key=api_key) if api_key else None
+    if not api_key:
+        return None
+    return OpenAI(api_key=api_key)
 
 @st.cache_resource
 def get_index(_client):
@@ -365,25 +376,30 @@ if user_input:
     # ── Generation ──
     with st.chat_message("assistant"):
         try:
-            with st.spinner("Thinking..."):
-                resp = client.chat.completions.create(
-                    model="gpt-4o-mini",
-                    messages=[
-                        {"role": "system", "content": system_msg},
-                        {"role": "user", "content": user_input},
-                    ],
-                    temperature=0.1,
-                    max_tokens=800,
-                )
-                answer = resp.choices[0].message.content
+            stream = client.chat.completions.create(
+                model="gpt-4o-mini",
+                messages=[
+                    {"role": "system", "content": system_msg},
+                    {"role": "user", "content": user_input},
+                ],
+                temperature=0.1,
+                max_tokens=800,
+                stream=True,
+            )
+            answer = st.write_stream(
+                (chunk.choices[0].delta.content or "")
+                for chunk in stream
+                if chunk.choices[0].delta.content is not None
+            )
         except Exception as e:
+            import traceback
+            traceback.print_exc()
             answer = (
                 "I'm sorry, I encountered an error while processing your question. "
                 "Please try again in a moment, or visit the official SP website at "
                 "**sp-ie.metu.edu.tr** or contact **ie-staj@metu.edu.tr** for assistance."
             )
-
-        st.markdown(answer)
+            st.markdown(answer)
 
         # ── Sources (same logic) ──
         sources_html = ""
