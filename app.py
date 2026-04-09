@@ -108,33 +108,38 @@ if IS_DARK:
     .stApp { background-color: #0f1117 !important; color: #e6e6e9 !important; }
     header[data-testid="stHeader"],
     .stApp > header { background-color: #0f1117 !important; }
-    section[data-testid="stSidebar"] > div:first-child { background-color: #16181f !important; }
+    section[data-testid="stSidebar"] { background-color: #16181f !important; }
+    section[data-testid="stSidebar"] > div { background-color: #16181f !important; }
     .li { background: #111 !important; }
-    [data-testid="stSidebar"] p, [data-testid="stSidebar"] li,
-    [data-testid="stSidebar"] span, [data-testid="stSidebar"] label { color: #c8c8cc !important; }
-    [data-testid="stSidebar"] a { color: #7eb4f5 !important; }
-    [data-testid="stSidebar"] strong { color: #e0e0e3 !important; }
+    [data-testid="stSidebar"] .stMarkdown p,
+    [data-testid="stSidebar"] .stMarkdown li { color: #c8c8cc !important; }
+    [data-testid="stSidebar"] .stMarkdown a { color: #7eb4f5 !important; }
+    [data-testid="stSidebar"] .stMarkdown strong { color: #e0e0e3 !important; }
+    [data-testid="stSidebar"] .stElementContainer label { color: #c8c8cc !important; }
     .brand-title { color: #FF6B82 !important; }
     .brand-sub { color: #9a9aa0 !important; }
     .stChatMessage { background: transparent !important; border: none !important; }
-    .stMarkdown p, .stMarkdown li, .stMarkdown span { color: #e2e2e6 !important; }
-    .stMarkdown strong { color: #FF6B80 !important; }
-    .stMarkdown a { color: #7eb4f5 !important; }
-    /* Chat input — target every possible container Streamlit uses */
+    /* Scope text colors to main area only */
+    [data-testid="stMain"] .stMarkdown p,
+    [data-testid="stMain"] .stMarkdown li,
+    [data-testid="stMain"] .stMarkdown span { color: #e2e2e6 !important; }
+    [data-testid="stMain"] .stMarkdown strong { color: #FF6B80 !important; }
+    [data-testid="stMain"] .stMarkdown a { color: #7eb4f5 !important; }
+    /* Chat input */
     [data-testid="stChatInput"],
     [data-testid="stChatInput"] > div,
     [data-testid="stBottom"],
-    [data-testid="stBottom"] > div,
-    [data-testid="stBottom"] [data-testid="stChatInput"],
-    .stChatInput,
-    .stChatInputContainer { background-color: #1a1c24 !important; border-color: #2a2d38 !important; }
+    [data-testid="stBottom"] > div { background-color: #1a1c24 !important; border-color: #2a2d38 !important; }
     [data-testid="stChatInput"] textarea,
     [data-testid="stBottom"] textarea { color: #e2e2e6 !important; background-color: #1a1c24 !important; }
     [data-testid="stChatInput"] button,
     [data-testid="stBottom"] button { color: #e2e2e6 !important; }
     .src-pill { color: #9ab0cc !important; border-color: rgba(150,170,200,0.25) !important; background: #1a1c24 !important; }
-    .stButton > button { background-color: #1a1c24 !important; color: #c8c8cc !important; border-color: #2a2d38 !important; }
-    .stButton > button:hover { background-color: #252830 !important; border-color: #C8102E !important; }
+    /* Scope button styling to main area only */
+    [data-testid="stMain"] .stButton > button { background-color: #1a1c24 !important; color: #c8c8cc !important; border-color: #2a2d38 !important; }
+    [data-testid="stMain"] .stButton > button:hover { background-color: #252830 !important; border-color: #C8102E !important; }
+    [data-testid="stSidebar"] .stButton > button { background-color: #1e2028 !important; color: #c8c8cc !important; border-color: #2a2d38 !important; }
+    [data-testid="stSidebar"] .stButton > button:hover { background-color: #252830 !important; border-color: #C8102E !important; }
     h1, h2, h3, h4, h5 { color: #e6e6e9 !important; }
     .wh h2 { color: #e6e6e9 !important; }
     </style>
@@ -145,33 +150,38 @@ else:
     .stApp { background-color: #fafafa !important; color: #1a1a2e !important; }
     header[data-testid="stHeader"],
     .stApp > header { background-color: #fafafa !important; }
-    section[data-testid="stSidebar"] > div:first-child { background-color: #ffffff !important; }
+    section[data-testid="stSidebar"] { background-color: #ffffff !important; }
+    section[data-testid="stSidebar"] > div { background-color: #ffffff !important; }
     .li { background: #ffffff !important; }
-    [data-testid="stSidebar"] p, [data-testid="stSidebar"] li,
-    [data-testid="stSidebar"] span, [data-testid="stSidebar"] label { color: #4a4a5a !important; }
-    [data-testid="stSidebar"] a { color: #1a5fb4 !important; }
-    [data-testid="stSidebar"] strong { color: #1a1a2e !important; }
+    [data-testid="stSidebar"] .stMarkdown p,
+    [data-testid="stSidebar"] .stMarkdown li { color: #4a4a5a !important; }
+    [data-testid="stSidebar"] .stMarkdown a { color: #1a5fb4 !important; }
+    [data-testid="stSidebar"] .stMarkdown strong { color: #1a1a2e !important; }
+    [data-testid="stSidebar"] .stElementContainer label { color: #4a4a5a !important; }
     .brand-title { color: #C8102E !important; }
     .brand-sub { color: #888 !important; }
     .stChatMessage { background: transparent !important; border: none !important; }
-    .stMarkdown, .stMarkdown p, .stMarkdown li, .stMarkdown span { color: #2a2a3e !important; }
-    .stMarkdown strong { color: #C8102E !important; }
-    .stMarkdown a { color: #1a5fb4 !important; }
-    /* Chat input — target every possible container */
+    /* Scope text colors to main area only */
+    [data-testid="stMain"] .stMarkdown p,
+    [data-testid="stMain"] .stMarkdown li,
+    [data-testid="stMain"] .stMarkdown span { color: #2a2a3e !important; }
+    [data-testid="stMain"] .stMarkdown strong { color: #C8102E !important; }
+    [data-testid="stMain"] .stMarkdown a { color: #1a5fb4 !important; }
+    /* Chat input */
     [data-testid="stChatInput"],
     [data-testid="stChatInput"] > div,
     [data-testid="stBottom"],
-    [data-testid="stBottom"] > div,
-    [data-testid="stBottom"] [data-testid="stChatInput"],
-    .stChatInput,
-    .stChatInputContainer { background-color: #ffffff !important; border-color: #e0e0e8 !important; }
+    [data-testid="stBottom"] > div { background-color: #ffffff !important; border-color: #e0e0e8 !important; }
     [data-testid="stChatInput"] textarea,
     [data-testid="stBottom"] textarea { color: #1a1a2e !important; background-color: #ffffff !important; }
     [data-testid="stChatInput"] button,
     [data-testid="stBottom"] button { color: #1a1a2e !important; }
     .src-pill { color: #4a5f78 !important; border-color: rgba(0,0,0,0.1) !important; background: #f0f0f5 !important; }
-    .stButton > button { background-color: #ffffff !important; color: #2a2a3e !important; border-color: #e0e0e8 !important; }
-    .stButton > button:hover { background-color: #f5f5fa !important; border-color: #C8102E !important; }
+    /* Scope button styling to main area only */
+    [data-testid="stMain"] .stButton > button { background-color: #ffffff !important; color: #2a2a3e !important; border-color: #e0e0e8 !important; }
+    [data-testid="stMain"] .stButton > button:hover { background-color: #f5f5fa !important; border-color: #C8102E !important; }
+    [data-testid="stSidebar"] .stButton > button { background-color: #f0f0f5 !important; color: #2a2a3e !important; border-color: #e0e0e8 !important; }
+    [data-testid="stSidebar"] .stButton > button:hover { background-color: #e8e8ed !important; border-color: #C8102E !important; }
     h1, h2, h3, h4, h5 { color: #1a1a2e !important; }
     .wh h2 { color: #1a1a2e !important; }
     </style>
