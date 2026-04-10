@@ -88,7 +88,7 @@ div[data-testid="manage-app-button"] { display: none; }
     box-shadow: 0 3px 12px rgba(200,16,46,0.18);
 }
 .li {
-    width: 52px; height: 52px; border-radius: 50%;
+    width: 52px; height: 52px; border-radius: 50%; background: #111;
     display: flex; align-items: center; justify-content: center; overflow: hidden;
 }
 .li img { width: 40px; height: 40px; object-fit: contain; }
@@ -108,43 +108,31 @@ if IS_DARK:
     .stApp { background-color: #0f1117 !important; color: #e6e6e9 !important; }
     header[data-testid="stHeader"],
     .stApp > header { background-color: #0f1117 !important; }
-    section[data-testid="stSidebar"] { background-color: #16181f !important; }
+    [data-testid="stSidebar"], section[data-testid="stSidebar"] { background-color: #16181f !important; border-right: 1px solid #2a2d38 !important; }
     section[data-testid="stSidebar"] > div { background-color: #16181f !important; }
-    .li { background: #111 !important; }
-    [data-testid="stSidebar"] .stMarkdown p,
-    [data-testid="stSidebar"] .stMarkdown li { color: #c8c8cc !important; }
-    [data-testid="stSidebar"] .stMarkdown a { color: #7eb4f5 !important; }
-    [data-testid="stSidebar"] .stMarkdown strong { color: #e0e0e3 !important; }
-    [data-testid="stSidebar"] .stElementContainer label { color: #c8c8cc !important; }
+    [data-testid="stSidebar"] p, [data-testid="stSidebar"] li,
+    [data-testid="stSidebar"] span, [data-testid="stSidebar"] label { color: #e0e0e3 !important; }
+    [data-testid="stSidebar"] a { color: #7eb4f5 !important; }
+    [data-testid="stSidebar"] strong { color: #ffffff !important; }
     .brand-title { color: #FF6B82 !important; }
     .brand-sub { color: #9a9aa0 !important; }
-    .stChatMessage { background: transparent !important; border: none !important; }
-    /* Main area text colors — exclude sidebar */
-    .stApp .stMarkdown p,
-    .stApp .stMarkdown li,
-    .stApp .stMarkdown span { color: #e2e2e6 !important; }
-    .stApp .stMarkdown strong { color: #FF6B80 !important; }
-    .stApp .stMarkdown a { color: #7eb4f5 !important; }
-    /* Re-apply sidebar-specific overrides */
-    [data-testid="stSidebar"] .stMarkdown p,
-    [data-testid="stSidebar"] .stMarkdown li { color: #c8c8cc !important; }
+    .stChatMessage { border: none !important; }
+    .stMarkdown p, .stMarkdown li, .stMarkdown span { color: #e2e2e6 !important; }
+    .stMarkdown strong { color: #FF6B82 !important; }
+    .stMarkdown a { color: #7eb4f5 !important; }
     /* Chat input */
-    [data-testid="stChatInput"],
-    [data-testid="stChatInput"] > div,
-    [data-testid="stBottom"],
-    [data-testid="stBottom"] > div { background-color: #1a1c24 !important; border-color: #2a2d38 !important; }
-    [data-testid="stChatInput"] textarea,
-    [data-testid="stBottom"] textarea { color: #e2e2e6 !important; background-color: #1a1c24 !important; }
-    [data-testid="stChatInput"] button,
-    [data-testid="stBottom"] button { color: #e2e2e6 !important; }
-    .src-pill { color: #9ab0cc !important; border-color: rgba(150,170,200,0.25) !important; background: #1a1c24 !important; }
-    /* Scope button styling — global then sidebar override */
-    .stButton > button { background-color: #1a1c24 !important; color: #c8c8cc !important; border-color: #2a2d38 !important; }
-    .stButton > button:hover { background-color: #252830 !important; border-color: #C8102E !important; color: #e6e6e9 !important; }
-    [data-testid="stSidebar"] .stButton > button { background-color: #1e2028 !important; }
-    [data-testid="stSidebar"] .stButton > button:hover { background-color: #252830 !important; }
-    h1, h2, h3, h4, h5 { color: #e6e6e9 !important; }
-    .wh h2 { color: #e6e6e9 !important; }
+    [data-testid="stChatInput"], [data-testid="stChatInput"] > div,
+    [data-testid="stBottom"], [data-testid="stBottom"] > div,
+    .stChatInput, .stChatInputContainer { background-color: #1a1c24 !important; border-color: #3b3f4d !important; }
+    [data-testid="stChatInput"] textarea, [data-testid="stBottom"] textarea { color: #ffffff !important; background-color: #1a1c24 !important; }
+    [data-testid="stChatInput"] textarea::placeholder { color: #7a7a85 !important; }
+    [data-testid="stChatInput"] button { color: #e2e2e6 !important; }
+    .src-pill { color: #c4d7ed !important; border-color: rgba(150,170,200,0.5) !important; background: #1f222b !important; }
+    .src-pill:hover { border-color: #FF6B82 !important; color: #FF6B82 !important; opacity: 1; }
+    .stButton > button { background-color: #1f222b !important; color: #e0e0e3 !important; border-color: #3b3f4d !important; }
+    .stButton > button:hover { background-color: #2a2d38 !important; border-color: #FF6B82 !important; color: #FF6B82 !important; }
+    h1, h2, h3, h4, h5 { color: #ffffff !important; }
+    .wh h2 { color: #ffffff !important; }
     </style>
     """, unsafe_allow_html=True)
 else:
@@ -153,41 +141,32 @@ else:
     .stApp { background-color: #fafafa !important; color: #1a1a2e !important; }
     header[data-testid="stHeader"],
     .stApp > header { background-color: #fafafa !important; }
-    section[data-testid="stSidebar"] { background-color: #ffffff !important; }
     section[data-testid="stSidebar"] > div { background-color: #ffffff !important; }
-    .li { background: #ffffff !important; }
-    [data-testid="stSidebar"] .stMarkdown p,
-    [data-testid="stSidebar"] .stMarkdown li { color: #4a4a5a !important; }
-    [data-testid="stSidebar"] .stMarkdown a { color: #1a5fb4 !important; }
-    [data-testid="stSidebar"] .stMarkdown strong { color: #1a1a2e !important; }
-    [data-testid="stSidebar"] .stElementContainer label { color: #4a4a5a !important; }
+    [data-testid="stSidebar"] p, [data-testid="stSidebar"] li,
+    [data-testid="stSidebar"] span, [data-testid="stSidebar"] label { color: #4a4a5a !important; }
+    [data-testid="stSidebar"] a { color: #1a5fb4 !important; }
+    [data-testid="stSidebar"] strong { color: #1a1a2e !important; }
     .brand-title { color: #C8102E !important; }
     .brand-sub { color: #888 !important; }
     .stChatMessage { background: transparent !important; border: none !important; }
-    /* Main area text colors — exclude sidebar */
-    .stApp .stMarkdown p,
-    .stApp .stMarkdown li,
-    .stApp .stMarkdown span { color: #2a2a3e !important; }
-    .stApp .stMarkdown strong { color: #C8102E !important; }
-    .stApp .stMarkdown a { color: #1a5fb4 !important; }
-    /* Re-apply sidebar-specific overrides */
-    [data-testid="stSidebar"] .stMarkdown p,
-    [data-testid="stSidebar"] .stMarkdown li { color: #4a4a5a !important; }
-    /* Chat input */
+    .stMarkdown, .stMarkdown p, .stMarkdown li, .stMarkdown span { color: #2a2a3e !important; }
+    .stMarkdown strong { color: #C8102E !important; }
+    .stMarkdown a { color: #1a5fb4 !important; }
+    /* Chat input — target every possible container */
     [data-testid="stChatInput"],
     [data-testid="stChatInput"] > div,
     [data-testid="stBottom"],
-    [data-testid="stBottom"] > div { background-color: #ffffff !important; border-color: #e0e0e8 !important; }
+    [data-testid="stBottom"] > div,
+    [data-testid="stBottom"] [data-testid="stChatInput"],
+    .stChatInput,
+    .stChatInputContainer { background-color: #ffffff !important; border-color: #e0e0e8 !important; }
     [data-testid="stChatInput"] textarea,
     [data-testid="stBottom"] textarea { color: #1a1a2e !important; background-color: #ffffff !important; }
     [data-testid="stChatInput"] button,
     [data-testid="stBottom"] button { color: #1a1a2e !important; }
     .src-pill { color: #4a5f78 !important; border-color: rgba(0,0,0,0.1) !important; background: #f0f0f5 !important; }
-    /* Scope button styling — global then sidebar override */
     .stButton > button { background-color: #ffffff !important; color: #2a2a3e !important; border-color: #e0e0e8 !important; }
-    .stButton > button:hover { background-color: #f5f5fa !important; border-color: #C8102E !important; color: #1a1a2e !important; }
-    [data-testid="stSidebar"] .stButton > button { background-color: #f0f0f5 !important; }
-    [data-testid="stSidebar"] .stButton > button:hover { background-color: #e8e8ed !important; }
+    .stButton > button:hover { background-color: #f5f5fa !important; border-color: #C8102E !important; }
     h1, h2, h3, h4, h5 { color: #1a1a2e !important; }
     .wh h2 { color: #1a1a2e !important; }
     </style>
@@ -228,11 +207,14 @@ with st.sidebar:
     # ── Quick Links ──
     st.markdown("**🔗 Quick Links**")
     st.markdown(
-        "- [SP Website (Main Page)](https://sp-ie.metu.edu.tr/en)\n"
-        "- [General Information](https://sp-ie.metu.edu.tr/en/general-information)\n"
-        "- [Steps to Follow](https://sp-ie.metu.edu.tr/en/steps-follow)\n"
-        "- [FAQ](https://sp-ie.metu.edu.tr/en/faq)\n"
-        "- [SP Committee](https://sp-ie.metu.edu.tr/en/sp-committee)"
+        """<div style="display:flex; flex-direction:column; gap:0.4rem; padding-left:0.2rem; font-size:0.95rem;">
+        <a href="https://sp-ie.metu.edu.tr/en" target="_blank" style="text-decoration:none;">🏠 SP Website (Main Page)</a>
+        <a href="https://sp-ie.metu.edu.tr/en/general-information" target="_blank" style="text-decoration:none;">📄 General Information</a>
+        <a href="https://sp-ie.metu.edu.tr/en/steps-follow" target="_blank" style="text-decoration:none;">👣 Steps to Follow</a>
+        <a href="https://sp-ie.metu.edu.tr/en/faq" target="_blank" style="text-decoration:none;">❓ FAQ</a>
+        <a href="https://sp-ie.metu.edu.tr/en/sp-committee" target="_blank" style="text-decoration:none;">📬 SP Committee</a>
+        </div>""",
+        unsafe_allow_html=True
     )
     st.caption("📄 Documents, Forms & SP Opportunities are available on the SP Website main page.")
 
@@ -241,9 +223,12 @@ with st.sidebar:
     # ── IE Curriculum Links (NEW) ──
     st.markdown("**📚 IE Curriculum**")
     st.markdown(
-        "- [Prerequisite Chain](https://ie.metu.edu.tr/en/prerequisite-chain)\n"
-        "- [IE Curriculum (EN)](https://ie.metu.edu.tr/en/bs-industrial-engineering-curriculum)\n"
-        "- [IE Müfredatı (TR)](https://ie.metu.edu.tr/tr/endustri-muhendisligi-lisans-ogretim-programi)"
+        """<div style="display:flex; flex-direction:column; gap:0.4rem; padding-left:0.2rem; font-size:0.95rem;">
+        <a href="https://ie.metu.edu.tr/en/prerequisite-chain" target="_blank" style="text-decoration:none;">🔗 Prerequisite Chain</a>
+        <a href="https://ie.metu.edu.tr/en/bs-industrial-engineering-curriculum" target="_blank" style="text-decoration:none;">📘 IE Curriculum (EN)</a>
+        <a href="https://ie.metu.edu.tr/tr/endustri-muhendisligi-lisans-ogretim-programi" target="_blank" style="text-decoration:none;">📕 IE Müfredatı (TR)</a>
+        </div>""",
+        unsafe_allow_html=True
     )
 
     st.divider()
@@ -255,13 +240,6 @@ with st.sidebar:
     st.caption("• Can I do my internship abroad?")
     st.caption("• What are the prerequisites for IE 300?")
     st.caption("• Who do I contact for SP questions?")
-
-    st.divider()
-
-    # ── Clear Chat ──
-    if st.button("🗑️ Clear conversation", use_container_width=True):
-        st.session_state.messages = []
-        st.rerun()
 
     st.divider()
 
@@ -278,9 +256,7 @@ with st.sidebar:
 @st.cache_resource
 def get_client():
     api_key = st.secrets.get("OPENAI_API_KEY", "")
-    if not api_key:
-        return None
-    return OpenAI(api_key=api_key)
+    return OpenAI(api_key=api_key) if api_key else None
 
 @st.cache_resource
 def get_index(_client):
@@ -392,30 +368,25 @@ if user_input:
     # ── Generation ──
     with st.chat_message("assistant"):
         try:
-            stream = client.chat.completions.create(
-                model="gpt-4o-mini",
-                messages=[
-                    {"role": "system", "content": system_msg},
-                    {"role": "user", "content": user_input},
-                ],
-                temperature=0.1,
-                max_tokens=800,
-                stream=True,
-            )
-            answer = st.write_stream(
-                (chunk.choices[0].delta.content or "")
-                for chunk in stream
-                if chunk.choices[0].delta.content is not None
-            )
+            with st.spinner("Thinking..."):
+                resp = client.chat.completions.create(
+                    model="gpt-4o-mini",
+                    messages=[
+                        {"role": "system", "content": system_msg},
+                        {"role": "user", "content": user_input},
+                    ],
+                    temperature=0.1,
+                    max_tokens=800,
+                )
+                answer = resp.choices[0].message.content
         except Exception as e:
-            import traceback
-            traceback.print_exc()
             answer = (
                 "I'm sorry, I encountered an error while processing your question. "
                 "Please try again in a moment, or visit the official SP website at "
                 "**sp-ie.metu.edu.tr** or contact **ie-staj@metu.edu.tr** for assistance."
             )
-            st.markdown(answer)
+
+        st.markdown(answer)
 
         # ── Sources (same logic) ──
         sources_html = ""
