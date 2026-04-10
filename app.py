@@ -39,9 +39,13 @@ IS_DARK = st.session_state.dark_mode
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-html, body, [class*="css"], .stMarkdown {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+body, .stApp {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
+p, h1, h2, h3, h4, h5, h6, ul, ol, li, a, button, input, textarea, .stMarkdown, .stText, [data-testid="stMarkdownContainer"] {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.material-symbols-rounded { font-family: 'Material Symbols Rounded' !important; }
 #MainMenu { visibility: hidden; }
 footer { visibility: hidden; }
 .stDeployButton { display: none; }
