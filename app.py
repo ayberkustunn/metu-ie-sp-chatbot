@@ -35,26 +35,43 @@ if "dark_mode" not in st.session_state:
 
 IS_DARK = st.session_state.dark_mode
 
+# ── Google Fonts (loaded via link tag — more reliable than @import in Streamlit) ──
+st.markdown(
+    '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">',
+    unsafe_allow_html=True,
+)
+
 # ── Base CSS (always applied) ──
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-body, .stApp {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+/* ── Typography: surgical targeting to avoid breaking Streamlit icon fonts ── */
+.stApp,
+[data-testid="stMarkdownContainer"],
+[data-testid="stMarkdownContainer"] p,
+[data-testid="stMarkdownContainer"] li,
+[data-testid="stMarkdownContainer"] span,
+[data-testid="stChatMessage"],
+[data-testid="stSidebar"],
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] li,
+[data-testid="stSidebar"] span,
+[data-testid="stSidebar"] label,
+.stButton > button,
+textarea,
+input {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
-p, h1, h2, h3, h4, h5, h6, ul, ol, li, a, button, input, textarea, .stMarkdown, .stText, [data-testid="stMarkdownContainer"] {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-}
-.material-symbols-rounded { font-family: 'Material Symbols Rounded' !important; }
-#MainMenu { visibility: hidden; }
+
+/* ── Hide only the settings gear / deploy button — NOT the sidebar toggle ── */
 footer { visibility: hidden; }
 .stDeployButton { display: none; }
-div[data-testid="stToolbar"] { display: none; }
 div[data-testid="manage-app-button"] { display: none; }
 .viewerBadge_container__r5tak { display: none !important; }
+
+/* ── Layout spacing ── */
 .block-container { padding-top: 1.5rem !important; padding-bottom: 0.5rem !important; }
 
-/* Mobile responsiveness */
+/* ── Mobile responsiveness ── */
 @media (max-width: 768px) {
     .block-container { padding-left: 1rem !important; padding-right: 1rem !important; }
     .wh h2 { font-size: 1.25rem !important; }
@@ -64,7 +81,7 @@ div[data-testid="manage-app-button"] { display: none; }
     .li img { width: 32px !important; height: 32px !important; }
 }
 
-/* Source pills */
+/* ── Source pills ── */
 .src-label {
     font-size: 0.67rem; font-weight: 700; text-transform: uppercase;
     letter-spacing: 0.1em; opacity: 0.45; margin: 0.6rem 0 0.25rem;
@@ -78,13 +95,13 @@ div[data-testid="manage-app-button"] { display: none; }
 }
 .src-pill:hover { border-color: #C8102E; color: #C8102E !important; opacity: 1; }
 
-/* Welcome */
+/* ── Welcome section ── */
 .wh { text-align: center; padding: 0.8rem 0 0.3rem; }
 .wh h2 { font-size: 1.55rem; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 0.25rem; line-height: 1.25; }
 .wh .ac { color: #C8102E; }
 .wh p { font-size: 0.92rem; opacity: 0.55; margin: 0; }
 
-/* Logo ring */
+/* ── Logo ring ── */
 .lr {
     width: 64px; height: 64px; border-radius: 50%; margin: 0 auto 0.7rem;
     background: linear-gradient(135deg, #C8102E, #E8384F);
@@ -97,7 +114,7 @@ div[data-testid="manage-app-button"] { display: none; }
 }
 .li img { width: 40px; height: 40px; object-fit: contain; }
 
-/* Footer */
+/* ── Footer ── */
 .ft {
     text-align: center; font-size: 0.58rem; text-transform: uppercase;
     letter-spacing: 0.12em; font-weight: 600; opacity: 0.3; padding: 0.4rem 0 0.8rem;
@@ -109,58 +126,93 @@ div[data-testid="manage-app-button"] { display: none; }
 if IS_DARK:
     st.markdown("""
     <style>
-    .stApp { background-color: #0f1117 !important; color: #e6e6e9 !important; }
+    /* ── Dark Mode ── */
+    .stApp { background-color: #0f1117 !important; color: #dcdce0 !important; }
     header[data-testid="stHeader"],
     .stApp > header { background-color: #0f1117 !important; }
-    [data-testid="stSidebar"], section[data-testid="stSidebar"] { background-color: #16181f !important; border-right: 1px solid #2a2d38 !important; }
-    section[data-testid="stSidebar"] > div { background-color: #16181f !important; }
+
+    /* Sidebar */
+    [data-testid="stSidebar"],
+    section[data-testid="stSidebar"] { background-color: #161822 !important; border-right: 1px solid rgba(255,255,255,0.06) !important; }
+    section[data-testid="stSidebar"] > div { background-color: #161822 !important; }
     [data-testid="stSidebar"] p, [data-testid="stSidebar"] li,
-    [data-testid="stSidebar"] span, [data-testid="stSidebar"] label { color: #e0e0e3 !important; }
-    [data-testid="stSidebar"] a { color: #7eb4f5 !important; }
-    [data-testid="stSidebar"] strong { color: #ffffff !important; }
-    .brand-title { color: #FF6B82 !important; }
-    .brand-sub { color: #9a9aa0 !important; }
+    [data-testid="stSidebar"] span, [data-testid="stSidebar"] label { color: #b8b8be !important; }
+    [data-testid="stSidebar"] a { color: #8ab4f8 !important; }
+    [data-testid="stSidebar"] strong { color: #f0f0f2 !important; }
+
+    /* Sidebar collapse button */
+    [data-testid="stSidebar"] button[kind="header"],
+    button[data-testid="stSidebarCollapseButton"],
+    [data-testid="collapsedControl"] button { color: #b8b8be !important; }
+
+    /* Branding */
+    .brand-title { color: #C8102E !important; }
+    .brand-sub { color: #8a8a92 !important; }
+
+    /* Chat messages */
     .stChatMessage { border: none !important; }
-    .stMarkdown p, .stMarkdown li, .stMarkdown span { color: #e2e2e6 !important; }
-    .stMarkdown strong { color: #FF6B82 !important; }
-    .stMarkdown a { color: #7eb4f5 !important; }
+    [data-testid="stMarkdownContainer"] p,
+    [data-testid="stMarkdownContainer"] li,
+    [data-testid="stMarkdownContainer"] span { color: #dcdce0 !important; }
+    [data-testid="stMarkdownContainer"] strong { color: #f0f0f2 !important; }
+    [data-testid="stMarkdownContainer"] a { color: #8ab4f8 !important; }
+
     /* Chat input */
     [data-testid="stChatInput"], [data-testid="stChatInput"] > div,
     [data-testid="stBottom"], [data-testid="stBottom"] > div,
-    .stChatInput, .stChatInputContainer { background-color: #1a1c24 !important; border-color: #3b3f4d !important; }
-    [data-testid="stChatInput"] textarea, [data-testid="stBottom"] textarea { color: #ffffff !important; background-color: #1a1c24 !important; }
-    [data-testid="stChatInput"] textarea::placeholder { color: #7a7a85 !important; }
-    [data-testid="stChatInput"] button { color: #e2e2e6 !important; }
-    .src-pill { color: #c4d7ed !important; border-color: rgba(150,170,200,0.5) !important; background: #1f222b !important; }
-    .src-pill:hover { border-color: #FF6B82 !important; color: #FF6B82 !important; opacity: 1; }
-    .stButton > button { background-color: #1f222b !important; color: #e0e0e3 !important; border-color: #3b3f4d !important; }
-    .stButton > button:hover { background-color: #2a2d38 !important; border-color: #FF6B82 !important; color: #FF6B82 !important; }
-    h1, h2, h3, h4, h5 { color: #ffffff !important; }
-    .wh h2 { color: #ffffff !important; }
+    .stChatInput, .stChatInputContainer { background-color: #1a1d28 !important; border-color: #2e3140 !important; }
+    [data-testid="stChatInput"] textarea,
+    [data-testid="stBottom"] textarea { color: #f0f0f2 !important; background-color: #1a1d28 !important; }
+    [data-testid="stChatInput"] textarea::placeholder { color: #6b6b78 !important; }
+    [data-testid="stChatInput"] button { color: #b8b8be !important; }
+
+    /* Source pills */
+    .src-pill { color: #b0c4de !important; border-color: rgba(136,180,248,0.2) !important; background: #1c1f2a !important; }
+    .src-pill:hover { border-color: #C8102E !important; color: #C8102E !important; opacity: 1; }
+
+    /* Buttons */
+    .stButton > button { background-color: #1c1f2a !important; color: #dcdce0 !important; border-color: #2e3140 !important; }
+    .stButton > button:hover { background-color: #252838 !important; border-color: #C8102E !important; color: #C8102E !important; }
+
+    /* Headings */
+    h1, h2, h3, h4, h5 { color: #f0f0f2 !important; }
+    .wh h2 { color: #f0f0f2 !important; }
+
+    /* Dividers */
+    hr, [data-testid="stSidebar"] hr { border-color: rgba(255,255,255,0.06) !important; }
     </style>
     """, unsafe_allow_html=True)
 else:
     st.markdown("""
     <style>
+    /* ── Light Mode ── */
     .stApp { background-color: #fafafa !important; color: #1a1a2e !important; }
     header[data-testid="stHeader"],
     .stApp > header { background-color: #fafafa !important; }
+
+    /* Sidebar */
     section[data-testid="stSidebar"] > div { background-color: #ffffff !important; }
     [data-testid="stSidebar"] p, [data-testid="stSidebar"] li,
     [data-testid="stSidebar"] span, [data-testid="stSidebar"] label { color: #4a4a5a !important; }
     [data-testid="stSidebar"] a { color: #1a5fb4 !important; }
     [data-testid="stSidebar"] strong { color: #1a1a2e !important; }
+
+    /* Branding */
     .brand-title { color: #C8102E !important; }
     .brand-sub { color: #888 !important; }
+
+    /* Chat messages */
     .stChatMessage { background: transparent !important; border: none !important; }
-    .stMarkdown, .stMarkdown p, .stMarkdown li, .stMarkdown span { color: #2a2a3e !important; }
-    .stMarkdown strong { color: #C8102E !important; }
-    .stMarkdown a { color: #1a5fb4 !important; }
-    /* Chat input — target every possible container */
-    [data-testid="stChatInput"],
-    [data-testid="stChatInput"] > div,
-    [data-testid="stBottom"],
-    [data-testid="stBottom"] > div,
+    [data-testid="stMarkdownContainer"],
+    [data-testid="stMarkdownContainer"] p,
+    [data-testid="stMarkdownContainer"] li,
+    [data-testid="stMarkdownContainer"] span { color: #2a2a3e !important; }
+    [data-testid="stMarkdownContainer"] strong { color: #C8102E !important; }
+    [data-testid="stMarkdownContainer"] a { color: #1a5fb4 !important; }
+
+    /* Chat input */
+    [data-testid="stChatInput"], [data-testid="stChatInput"] > div,
+    [data-testid="stBottom"], [data-testid="stBottom"] > div,
     [data-testid="stBottom"] [data-testid="stChatInput"],
     .stChatInput,
     .stChatInputContainer { background-color: #ffffff !important; border-color: #e0e0e8 !important; }
@@ -168,9 +220,15 @@ else:
     [data-testid="stBottom"] textarea { color: #1a1a2e !important; background-color: #ffffff !important; }
     [data-testid="stChatInput"] button,
     [data-testid="stBottom"] button { color: #1a1a2e !important; }
+
+    /* Source pills */
     .src-pill { color: #4a5f78 !important; border-color: rgba(0,0,0,0.1) !important; background: #f0f0f5 !important; }
+
+    /* Buttons */
     .stButton > button { background-color: #ffffff !important; color: #2a2a3e !important; border-color: #e0e0e8 !important; }
     .stButton > button:hover { background-color: #f5f5fa !important; border-color: #C8102E !important; }
+
+    /* Headings */
     h1, h2, h3, h4, h5 { color: #1a1a2e !important; }
     .wh h2 { color: #1a1a2e !important; }
     </style>
