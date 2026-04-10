@@ -82,12 +82,35 @@ def build_index(client) -> Tuple[object, List[Dict], np.ndarray]:
     cache = _load_cache()
 
     texts = [d["text"] for d in docs]
-    embeddings = []
-    for t in texts:
-        emb = get_embedding(t, client, cache)
-        embeddings.append(emb)
+    embeddings = [None] * len(texts)
+    
+    uncached_texts = []
+    uncached_indices = []
 
-    _save_cache(cache)
+    for i, t in enumerate(texts):
+        key = _hash_text(t)
+        if key in cache:
+            embeddings[i] = cache[key]
+        else:
+            uncached_texts.append(t)
+            uncached_indices.append(i)
+
+    # Process uncached texts in batches to dramatically speed up initial index building
+    if uncached_texts:
+        batch_size = 100
+        for i in range(0, len(uncached_texts), batch_size):
+            batch = uncached_texts[i:i+batch_size]
+            response = client.embeddings.create(
+                model="text-embedding-3-small",
+                input=batch,
+            )
+            for j, data in enumerate(response.data):
+                idx = uncached_indices[i+j]
+                emb = data.embedding
+                embeddings[idx] = emb
+                cache[_hash_text(batch[j])] = emb
+        
+        _save_cache(cache)
 
     emb_matrix = np.array(embeddings, dtype="float32")
     # Normalize for cosine similarity
