@@ -51,15 +51,23 @@ st.markdown("""
 [data-testid="stMarkdownContainer"] li,
 [data-testid="stMarkdownContainer"] span,
 [data-testid="stChatMessage"],
-[data-testid="stSidebar"],
 [data-testid="stSidebar"] p,
 [data-testid="stSidebar"] li,
-[data-testid="stSidebar"] span,
 [data-testid="stSidebar"] label,
+[data-testid="stSidebar"] [data-testid="stMarkdownContainer"],
 .stButton > button,
 textarea,
 input {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ── Preserve Streamlit icon fonts (sidebar toggle, buttons, etc.) ── */
+.material-symbols-rounded,
+.material-symbols-outlined,
+[data-testid="stSidebar"] button span,
+[data-testid="collapsedControl"] span,
+[data-testid="collapsedControl"] button span {
+    font-family: 'Material Symbols Rounded' !important;
 }
 
 /* ── Hide only the settings gear / deploy button — NOT the sidebar toggle ── */
