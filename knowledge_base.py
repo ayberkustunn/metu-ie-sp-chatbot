@@ -585,3 +585,15 @@ CURATED_FAQ = [
         "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
     },
 ]
+
+import os
+import json
+
+_chunks_file = os.path.join(os.path.dirname(__file__), "document_chunks.json")
+if os.path.exists(_chunks_file):
+    try:
+        with open(_chunks_file, "r", encoding="utf-8") as f:
+            extra_chunks = json.load(f)
+            KNOWLEDGE_CHUNKS.extend(extra_chunks)
+    except Exception as e:
+        print(f"Error loading document_chunks.json: {e}")
