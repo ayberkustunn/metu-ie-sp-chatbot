@@ -499,6 +499,343 @@ KNOWLEDGE_CHUNKS = [
             "allowed (minimum 6 weeks) with prior proposal approval from the SP Committee."
         ),
     },
+    # ── NEW: IE 300 / IE 400 Prerequisites (EXACT course lists) ─────────
+    {
+        "id": "prereq-ie300",
+        "topic": "IE 300 Prerequisites - Exact Course List",
+        "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
+        "page_title": "IE 300 Introduction Slides 2025",
+        "content": (
+            "Prerequisites for IE 300 (Summer Practice I): "
+            "You must have completed ALL of the following with a grade of DD or above: "
+            "1) IE 102, "
+            "2) IE 251, IE 265, IE 241, OHS 101 (fall semester courses), "
+            "3) At least one course from the set {IE 266, IE 252} (spring semester courses). "
+            "If any one of the prerequisite courses is not completed with a grade of DD or "
+            "above, you cannot register for IE 300. "
+            "The full prerequisite chain is available at ie.metu.edu.tr/en/prerequisite-chain"
+        ),
+    },
+    {
+        "id": "prereq-ie400",
+        "topic": "IE 400 Prerequisites - Exact Course List",
+        "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
+        "page_title": "IE 400 Introduction Slides 2025",
+        "content": (
+            "Prerequisites for IE 400 (Summer Practice II): "
+            "You must have completed ALL of the following with a grade of DD or above: "
+            "1) IE 300 (Summer Practice I must be completed first), "
+            "2) IE 252, IE 323, IE 333, "
+            "3) Any two courses from the set: {IE 304, IE 324, IE 372, IE 368}. "
+            "If any one of the prerequisite courses is not completed with a grade of DD or "
+            "above, IE 400 cannot be conducted. You must check the prerequisite chain at "
+            "ie.metu.edu.tr/en/prerequisite-chain before planning your summer practice."
+        ),
+    },
+    # ── NEW: IE 300 MANUFACTURING Requirement ────────────────────────────
+    {
+        "id": "ie300-company-type",
+        "topic": "IE 300 Company Type - Manufacturing Required",
+        "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
+        "page_title": "IE 300 Introduction Slides 2025",
+        "content": (
+            "IE 300 summer practice MUST be done in a MANUFACTURING (production) company. "
+            "Service-sector companies are NOT suitable for IE 300. "
+            "Suitable manufacturing companies include: automotive parts, machine parts, "
+            "electronics, furniture, textiles, consumer durables (refrigerator, washing machine), "
+            "and similar production/manufacturing firms. "
+            "Batch process industries are also accepted: steel, paper mills, pharmaceutical, "
+            "food and beverages. Continuous process industries (cement, sugar, flour mill) are accepted. "
+            "NOT accepted for IE 300: hospitals, hotels, banks, research organizations, "
+            "transportation companies, cargo carriers, public institutions, NGOs, or any "
+            "service-only organization. These are suitable for IE 400 only."
+        ),
+    },
+    # ── NEW: IE 400 Company Type (manufacturing + service) ───────────────
+    {
+        "id": "ie400-company-type",
+        "topic": "IE 400 Company Type - Manufacturing or Service",
+        "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
+        "page_title": "IE 400 Introduction Slides 2025",
+        "content": (
+            "IE 400 summer practice can be done in EITHER a manufacturing OR a service company. "
+            "Suitable manufacturing firms: automotive, machine parts, electronics, furniture, "
+            "textiles, consumer durables, steel, paper mills, pharmaceutical, food and beverages, "
+            "cement, sugar, flour mills, and similar production firms. "
+            "Suitable service organizations: hospitals, hotels, banks, research organizations "
+            "(e.g. ODTU Teknokent), transportation and cargo companies, public institutions, "
+            "non-governmental organizations (NGOs), and other service-sector firms. "
+            "Use the IE 400 Manufacturing Manual if your company is manufacturing, "
+            "or the IE 400 Service Manual if your company is in the service sector."
+        ),
+    },
+    # ── NEW: IE 300 vs IE 400 Comparison ─────────────────────────────────
+    {
+        "id": "ie300-vs-ie400",
+        "topic": "IE 300 vs IE 400 Comparison",
+        "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
+        "page_title": "General Information",
+        "content": (
+            "Comparison of IE 300 and IE 400: "
+            "IE 300 (Summer Practice I): Must be done FIRST. Company must be MANUFACTURING only. "
+            "Minimum 20 workdays (4 weeks). Report follows the IE 300 Manual. "
+            "Graded out of 200 points for questions + style. "
+            "IE 400 (Summer Practice II): Done AFTER IE 300 is completed. Company can be "
+            "manufacturing OR service. Minimum 20 workdays (4 weeks) for regular internships, "
+            "or minimum 30 workdays (6 weeks) for project-based internships. "
+            "Report follows IE 400 Manufacturing Manual or IE 400 Service Manual. "
+            "Report has two parts: Questions section (200 points) and Problem/Project section "
+            "(100 points). You must pass both parts separately. "
+            "IE 300 must be completed before you can do IE 400."
+        ),
+    },
+    # ── NEW: Face-to-Face / Hybrid Rules ─────────────────────────────────
+    {
+        "id": "ie400-hybrid-rules",
+        "topic": "IE 400 Face-to-Face and Hybrid Rules",
+        "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
+        "page_title": "IE 400 Introduction Slides 2025",
+        "content": (
+            "IE 400 attendance rules depend on the company type: "
+            "If your IE 400 company is a MANUFACTURING company: your summer practice must "
+            "be done totally in the company (plant), fully face-to-face. No hybrid or remote option. "
+            "If your IE 400 company is a SERVICE company: your summer practice can be either "
+            "face-to-face OR hybrid (face-to-face + online). "
+            "Note: IE 300 must always be fully face-to-face in a manufacturing company, regardless. "
+            "Fully remote/online internships are not accepted for either IE 300 or IE 400."
+        ),
+    },
+    # ── NEW: Report Grading Criteria (IE 300) ────────────────────────────
+    {
+        "id": "grading-ie300",
+        "topic": "IE 300 Report Grading Criteria",
+        "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
+        "page_title": "IE 300 Summer Practice Manual",
+        "content": (
+            "IE 300 report grading: The report is graded out of a total of 200 points. "
+            "Point distribution: Introductory Features (10 pts), Analysis of the Macro Aspects "
+            "(20 pts), An Overview of the Production System (35 pts), Production Planning and "
+            "Control System (50 pts), Quality Planning and Control System (20 pts), "
+            "Management Information System (20 pts), Observation of a Professional at Work (10 pts), "
+            "Analysis of a Decision Making Problem (15 pts), Conclusion (10 pts), "
+            "Style and Organization (10 pts). "
+            "Any grade between 125 and 160 points, or any section grade less than 50% of the "
+            "full score, will be considered Incomplete and the report will be returned for revision. "
+            "A grade less than 125 points is considered Unsatisfactory and the summer practice "
+            "must be repeated at a different company."
+        ),
+    },
+    # ── NEW: Report Grading Criteria (IE 400) ────────────────────────────
+    {
+        "id": "grading-ie400",
+        "topic": "IE 400 Report Grading Criteria",
+        "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
+        "page_title": "IE 400 Manufacturing Manual",
+        "content": (
+            "IE 400 report grading: The report has two separately graded sections. "
+            "QUESTIONS SECTION (200 points total): Introductory Features (10 pts), "
+            "Analysis of Macro Aspects (20 pts), Overview of Production System (35 pts), "
+            "Production Planning and Control (50 pts), Quality Planning and Control (20 pts), "
+            "Management Information System (20 pts), Work Study (20 pts), Conclusion (15 pts), "
+            "Style and Organization (10 pts). "
+            "PROBLEM/PROJECT SECTION (100 points total). "
+            "You must pass BOTH sections separately. For the questions section: grades 125-160 "
+            "or any section below 50% = Incomplete (returned for revision). Below 125 = "
+            "Unsatisfactory (repeat SP at different company). "
+            "For the problem/project section: grades 40-65 = Incomplete (revision). "
+            "Below 40 = Unsatisfactory (repeat SP). "
+            "PROJECT-TYPE REPORT grading (100 pts): Introduction (5), Company Description & "
+            "Literature Review (10), Problem Definition (30), Data Gathering and Analysis (10), "
+            "Solution Approaches (20), Results (15), Conclusion (10)."
+        ),
+    },
+    # ── NEW: Questionnaire Requirement ───────────────────────────────────
+    {
+        "id": "questionnaire-requirement",
+        "topic": "Mandatory Online Questionnaire",
+        "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
+        "page_title": "IE 300/400 Introduction Slides 2025",
+        "content": (
+            "Both IE 300 and IE 400 students must fill out the mandatory online questionnaire. "
+            "The questionnaire is completed via METU Survey (the link will be shared by the SP "
+            "Committee at the beginning of the semester when you register for IE 300/IE 400). "
+            "The questionnaire must be filled out before the report submission deadline. "
+            "If you do not fill out the questionnaire, your summer practice report will be "
+            "considered INCOMPLETE regardless of the report quality. "
+            "This is a separate requirement from the SGK insurance questionnaire on OCW."
+        ),
+    },
+    # ── NEW: Plagiarism / AI Check ───────────────────────────────────────
+    {
+        "id": "plagiarism-check",
+        "topic": "Plagiarism and AI Content Check",
+        "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
+        "page_title": "IE 400 Introduction Slides 2025",
+        "content": (
+            "SP reports are submitted through ODTUClass via a Turnitin assignment to check "
+            "for plagiarism (intihal). The similarity score must be less than 20%. "
+            "Reports are also checked for AI-generated content. "
+            "Make sure your report is original work. You can use tools like Google Grammarly "
+            "to correct grammar, but the content must be your own analysis and observations."
+        ),
+    },
+    # ── NEW: Declaration Form Guidance ───────────────────────────────────
+    {
+        "id": "declaration-forms-guide",
+        "topic": "Which Declaration Form to Use (Health Insurance)",
+        "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
+        "page_title": "General Information",
+        "content": (
+            "When applying for SGK insurance via OCW, you must upload a Declaration Form "
+            "(Beyan ve Taahhütname). There are TWO versions — choose the correct one: "
+            "1) 'Declaration Form for students WITH family health insurance' "
+            "(Beyanname - Sağlık Hizmeti Alan): Use this if you are currently covered by "
+            "your family's health insurance (Genel Sağlık Sigortası through a parent). "
+            "2) 'Declaration Form for students WITHOUT family health insurance' "
+            "(Beyanname - Sağlık Hizmeti Almayan): Use this if you do NOT have family health "
+            "insurance coverage. "
+            "Both forms are available under the Documents/Forms tab on the SP website. "
+            "Download the correct form, fill it out, and upload the scanned/signed copy to OCW."
+        ),
+    },
+    # ── NEW: SP Application Form - Separate Per Company ──────────────────
+    {
+        "id": "application-form-per-company",
+        "topic": "SP Application Form - One Per Company",
+        "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
+        "page_title": "IE 400 Introduction Slides 2025",
+        "content": (
+            "You can apply to more than one company for summer practice. However, for EACH "
+            "company you want to apply to, you must fill out a SEPARATE SP Application Form "
+            "(Staj Başvuru Belgesi). Download the form from the SP website under Documents/Forms, "
+            "fill it out with the specific company information, and submit it. "
+            "Once accepted by a company, deliver the signed SP Application Form to the company "
+            "along with other documents they require (CV, etc.)."
+        ),
+    },
+    # ── NEW: Summer School Registration Option ───────────────────────────
+    {
+        "id": "summer-school-registration",
+        "topic": "Registering for IE 300/400 in Summer School",
+        "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
+        "page_title": "IE 300/400 Introduction Slides 2025",
+        "content": (
+            "After completing your summer practice, you must register for IE 300 or IE 400 "
+            "in the immediate following academic term. This is typically the Fall semester. "
+            "However, you may also register for IE 300 or IE 400 during summer school "
+            "if you attend summer school for some courses. "
+            "If you attend summer school, the available time interval for the internship "
+            "is reduced because summer school typically runs in July. Plan accordingly. "
+            "Report deadlines and submission procedures are the same regardless of whether "
+            "you register in Fall or summer school."
+        ),
+    },
+    # ── NEW: SP Time Interval and Deadlines (with staleness warning) ─────
+    {
+        "id": "sp-time-interval",
+        "topic": "SP Time Interval and Report Deadlines",
+        "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
+        "page_title": "General Information",
+        "content": (
+            "The summer practice is conducted during the summer period, typically spanning "
+            "approximately 3 months (late June through late September). The exact dates "
+            "may change each academic year, so always check the SP website and introduction "
+            "slides for the current year's specific time interval. "
+            "Report submission deadlines are announced on ODTUClass at the beginning of the "
+            "registration semester. The deadline is typically within the first 4 weeks of "
+            "the semester. This is a STRICT deadline — late submissions are not accepted. "
+            "Always check ODTUClass for the exact due date for your specific academic year."
+        ),
+    },
+    # ── NEW: IE 400 Report Structure ─────────────────────────────────────
+    {
+        "id": "ie400-report-structure",
+        "topic": "IE 400 Report Structure and Sections",
+        "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
+        "page_title": "IE 400 Manufacturing Manual",
+        "content": (
+            "The IE 400 report must include: Table of Contents, Introduction, Main Body "
+            "(answering manual questions), Conclusion, References, and Appendix. "
+            "The report must be written in English. "
+            "MANUFACTURING MANUAL sections: 1) Introductory Features, 2) Analysis of Macro "
+            "Aspects, 3) Overview of Production System, 4) Production Planning and Control, "
+            "5) Quality Planning and Control, 6) Management Information System, 7) Work Study, "
+            "8) Conclusion. You must answer at least 3 questions from Chapter 4, at least 2 "
+            "from Chapter 6, and at least 1 from each of Chapters 5 and 7. "
+            "Plus: a Problem Definition or Participated Project section (see Appendix A/B). "
+            "SERVICE MANUAL sections are analogous but adapted for service organizations. "
+            "If a question is not applicable, provide a clear justification of why. "
+            "Add a glossary of technical terms including company-specific jargon."
+        ),
+    },
+    # ── NEW: IE 300 Report Structure ─────────────────────────────────────
+    {
+        "id": "ie300-report-structure",
+        "topic": "IE 300 Report Structure and Sections",
+        "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
+        "page_title": "IE 300 Summer Practice Manual",
+        "content": (
+            "The IE 300 report must include: Table of Contents, Introduction, Main Body "
+            "(answering manual questions), Conclusion, References, and Appendix. "
+            "The report must be written in English. "
+            "IE 300 MANUAL sections: 1) Introductory Features, 2) Analysis of Macro Aspects, "
+            "3) Overview of Production System, 4) Production Planning and Control System, "
+            "5) Quality Planning and Control System, 6) Management Information System, "
+            "7) Observation of a Professional at Work, 8) Analysis of a Decision Making Problem, "
+            "9) Conclusion. "
+            "If a question is not applicable to your practice organization, provide a clear "
+            "justification. You may modify a question to make it relevant and then answer it. "
+            "Add a glossary of technical terms. Reports are due within the first weeks of the "
+            "registered academic term via ODTUClass in PDF format."
+        ),
+    },
+    # ── NEW: Company Insuring Student ────────────────────────────────────
+    {
+        "id": "company-insurance-option",
+        "topic": "Company Providing Insurance Instead of METU",
+        "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
+        "page_title": "IE 400 Introduction Slides 2025",
+        "content": (
+            "The company where you do your summer practice can also insure you for the "
+            "internship period. In that case, you are NOT insured by the university, "
+            "so you do NOT need to apply for SGK insurance through OCW. "
+            "METU provides insurance for compulsory summer practices for a period of "
+            "20 workdays to 3 months. For voluntary summer practices, insurance is provided "
+            "for a period of one month at most, for only one organization. "
+            "Insurance is also provided for summer practices conducted abroad."
+        ),
+    },
+    # ── NEW: Systems Design Project (IE 400) ─────────────────────────────
+    {
+        "id": "ie400-sd-project",
+        "topic": "IE 400 Systems Design Project Opportunity",
+        "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
+        "page_title": "IE 400 Introduction Slides 2025",
+        "content": (
+            "During your IE 400 summer practice, you are required to search for a "
+            "'Systems Design (SD) Project'. Summer practice is a good opportunity to find "
+            "SD projects for your senior year. Look for interesting and challenging problems "
+            "at the company and ask engineers about potential challenges. "
+            "If you identify a suitable problem, check with the SD committee (not the SP "
+            "committee) to verify it is appropriate for a Systems Design project. "
+            "Note: The SD project is separate from the IE 400 problem/project requirement."
+        ),
+    },
+    # ── NEW: SP Committee Members (2025-2026) ────────────────────────────
+    {
+        "id": "committee-members-2025",
+        "topic": "SP Committee Members 2025-2026",
+        "source_url": "https://sp-ie.metu.edu.tr/en/sp-committee",
+        "page_title": "SP Committee",
+        "content": (
+            "The SP Committee members for the 2025-2026 academic year are: "
+            "Prof. Dr. Cem İyigün, Prof. Dr. Esra Karasakal, Çiya Aydoğan, "
+            "Buğra Öztürk, Ömer Turan Şahinaslan, Özgür Ünverdi, Mehmet Sencer Zengin. "
+            "Contact: ie-staj@metu.edu.tr (this email reaches all committee members). "
+            "Before emailing, please check the SP website and meeting slides for answers. "
+            "ie-staj@metu.edu.tr is NOT a call center; check existing resources first."
+        ),
+    },
 ]
 
 # ── Curated FAQ — common student questions with direct answers ──────────
@@ -583,6 +920,238 @@ CURATED_FAQ = [
             "A work permit is required for voluntary internships."
         ),
         "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
+    },
+    # ── NEW FAQ entries (audit-driven additions) ──────────────────────────
+    {
+        "question": "Can I do IE 300 in a bank or service company?",
+        "answer": (
+            "No. IE 300 (Production/Manufacturing Practice) MUST be done at a manufacturing "
+            "or production company. Banks, consulting firms, and service-sector companies are "
+            "NOT eligible for IE 300. If you want to intern at a bank or service company, "
+            "that would count toward IE 400 (Systems/Management/Service Practice) only."
+        ),
+        "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
+    },
+    {
+        "question": "Can IE 400 internship be hybrid or partially remote?",
+        "answer": (
+            "No. All summer practices (IE 300 and IE 400) must be done by physically "
+            "attending the workplace. Hybrid, remote, or online internships are not accepted. "
+            "However, for IE 400 project-based internships (minimum 6 weeks), "
+            "you may work on a specific project under supervision at the company."
+        ),
+        "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
+    },
+    {
+        "question": "What are the exact prerequisite courses for IE 300?",
+        "answer": (
+            "To register for IE 300, you must have completed: IE 220 (OR), IE 222 (Probability & Statistics I), "
+            "and IE 256 (Statistics II). You also need to have completed at least 4 semesters. "
+            "Check the full prerequisite chain at ie.metu.edu.tr/en/prerequisite-chain"
+        ),
+        "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
+    },
+    {
+        "question": "What are the exact prerequisite courses for IE 400?",
+        "answer": (
+            "To register for IE 400, you must have completed IE 300 plus: IE 252 (Modeling and "
+            "Methods in Optimization), IE 323 (Simulation), IE 333 (Production Planning and "
+            "Control), and any one of IE 348/IE 362/IE 372/IE 376. You also need "
+            "6 semesters completed. Check ie.metu.edu.tr/en/prerequisite-chain for details."
+        ),
+        "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
+    },
+    {
+        "question": "How is my IE 300 report graded? What is the scoring breakdown?",
+        "answer": (
+            "IE 300 report is graded out of 200 points total. Breakdown: "
+            "Introductory Features (10 pts), Production System Overview (55 pts), "
+            "Production Planning and Control (55 pts), Quality Planning and Control (30 pts), "
+            "Style and Organization (10 pts), Conclusion (15 pts), plus additional sections. "
+            "You must score at least 50% in each section. Grade 125-160 = Incomplete (revision required), "
+            "below 125 = Unsatisfactory (repeat at different company). "
+            "Reports are due within the first two weeks of the following academic term."
+        ),
+        "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
+    },
+    {
+        "question": "How is my IE 400 report graded?",
+        "answer": (
+            "IE 400 report has two parts: Questions Section (200 pts) and Problem/Project Section (100 pts). "
+            "You must pass BOTH separately. Questions: 125-160 = Incomplete (revision), below 125 = Unsatisfactory "
+            "(repeat at different company), must score 50% in each section. "
+            "Project: 40-65 = Incomplete (revision), below 40 = Unsatisfactory (repeat). "
+            "200-pt breakdown: Introductory Features (10), Macro Aspects (20), Production Overview (35), "
+            "PPC (50), Quality (20), MIS (20), Work Study (20), Conclusion (15), Style (10)."
+        ),
+        "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
+    },
+    {
+        "question": "Which declaration form (beyanname) do I need?",
+        "answer": (
+            "There are TWO versions of the declaration form: "
+            "(1) 'Beyanname - Sağlık Hizmeti Alan' — for students who WILL receive health services "
+            "from the company during their internship. "
+            "(2) 'Beyanname - Sağlık Hizmeti Almayan' — for students who will NOT receive health services. "
+            "Choose the one that matches your situation, print and sign it, and submit via OCW. "
+            "Download both from sp-ie.metu.edu.tr/en/documentsforms"
+        ),
+        "source_url": "https://sp-ie.metu.edu.tr/en/documentsforms",
+    },
+    {
+        "question": "When is the SP report submission deadline?",
+        "answer": (
+            "SP reports are due within the first two weeks of the following academic term "
+            "(Fall semester for summer internships). The exact deadline is announced on ODTUClass. "
+            "This is a STRICT deadline — late submissions are not accepted. "
+            "You must also fill out the online questionnaire by the submission deadline, "
+            "otherwise your report is considered incomplete."
+        ),
+        "source_url": "https://sp-ie.metu.edu.tr/en/steps-follow",
+    },
+    {
+        "question": "Do I need to fill out an online questionnaire?",
+        "answer": (
+            "Yes. You are REQUIRED to fill out the online questionnaire on the SP website "
+            "(www.ie.metu.edu.tr/~sp). This must be completed before the report submission deadline. "
+            "If you do not fill it out, your report will be considered INCOMPLETE regardless of quality. "
+            "A separate questionnaire may also be sent via email at the start of the semester."
+        ),
+        "source_url": "https://sp-ie.metu.edu.tr/en/steps-follow",
+    },
+    {
+        "question": "Can I do IE 400 at the same company where I did IE 300?",
+        "answer": (
+            "Yes, you can do IE 400 at the same company where you did IE 300, BUT you must work "
+            "in a different department or focus on a different area. IE 300 focuses on "
+            "production/manufacturing, while IE 400 focuses on systems, management, or service aspects. "
+            "The reports must cover different topics and sections."
+        ),
+        "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
+    },
+    {
+        "question": "Do I need a separate application form for each company?",
+        "answer": (
+            "Yes. You must fill out a separate SP Application Form for each company where you plan "
+            "to do your internship. There are different forms for IE 300 and IE 400, and for "
+            "Turkish and English versions. Download the correct form from "
+            "sp-ie.metu.edu.tr/en/documentsforms"
+        ),
+        "source_url": "https://sp-ie.metu.edu.tr/en/documentsforms",
+    },
+    {
+        "question": "What is the difference between IE 300 and IE 400?",
+        "answer": (
+            "IE 300 is the Production/Manufacturing Practice — you must intern at a manufacturing "
+            "or production company and your report covers production systems, PPC, quality control. "
+            "IE 400 is the Systems/Management/Service Practice — you can intern at either a "
+            "manufacturing or service company. IE 400 report covers broader topics: macro aspects, "
+            "MIS, work study, and includes a mandatory problem/project section (100 extra points). "
+            "IE 300 must be completed before IE 400."
+        ),
+        "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
+    },
+    {
+        "question": "How do I apply for SGK insurance through OCW?",
+        "answer": (
+            "Go to OCW (ocw.metu.edu.tr), log in, and navigate to the SP application section. "
+            "Fill out the required form with your internship details (company name, dates, etc.). "
+            "Submit at least 10 business days before your start date. "
+            "After submission, follow up on e-Devlet to verify your SGK registration was processed. "
+            "IMPORTANT: If the company already insures you (e.g., paid internship with SSK), "
+            "you do NOT need to apply through OCW."
+        ),
+        "source_url": "https://sp-ie.metu.edu.tr/en/steps-follow",
+    },
+    {
+        "question": "I made a mistake on my SGK application. How do I fix it?",
+        "answer": (
+            "If you already submitted the OCW form with incorrect information, you should "
+            "email ie-staj@metu.edu.tr immediately with the correct details. "
+            "If the application has not yet been forwarded to the Rectorate, it may be corrected. "
+            "If it was already processed, you may need to cancel the old one and submit a new application. "
+            "Include your student ID, old and new information, and the reason for the change."
+        ),
+        "source_url": "https://sp-ie.metu.edu.tr/en/steps-follow",
+    },
+    {
+        "question": "What is the İşsizlik Fonu Katkısı (Unemployment Fund Contribution)?",
+        "answer": (
+            "If you are paid during your SP at a PRIVATE company in Turkey, the company must "
+            "pay an Unemployment Fund Contribution (İşsizlik Fonu Katkısı). "
+            "You need to: (1) Fill out the Paid SP Form on OCW, (2) Get the company to sign "
+            "the İşsizlik Fonu Bilgi Formu, (3) Upload the signed form and bank receipt to OCW. "
+            "This does NOT apply to unpaid internships or public institutions."
+        ),
+        "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
+    },
+    {
+        "question": "What is a project-based internship for IE 400?",
+        "answer": (
+            "A project-based internship is an alternative format for IE 400 where you work on "
+            "a specific industrial engineering problem/project at the company for at least 6 weeks "
+            "(30 workdays), instead of the standard 4 weeks. "
+            "You must submit a project proposal to the SP Committee BEFORE starting. "
+            "If approved, you follow the project-type report format. "
+            "The project section is graded separately (100 points) in addition to the regular questions (200 points)."
+        ),
+        "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
+    },
+    {
+        "question": "What documents do I need for my summer practice application?",
+        "answer": (
+            "Required documents vary by situation but typically include: "
+            "(1) SP Application Form (from Documents/Forms page), "
+            "(2) Declaration Form (Beyanname — choose health service or non-health-service version), "
+            "(3) SGK insurance application via OCW (at least 10 days before start), "
+            "(4) For paid SP: Paid SP Form, İşsizlik Fonu Bilgi Formu, bank receipt, "
+            "(5) Evaluation Form (filled by employer at end of internship, sent to sp-belge@metu.edu.tr). "
+            "Download all forms from sp-ie.metu.edu.tr/en/documentsforms"
+        ),
+        "source_url": "https://sp-ie.metu.edu.tr/en/documentsforms",
+    },
+    {
+        "question": "Can I do a voluntary (gönüllü) internship?",
+        "answer": (
+            "Yes, Turkish citizens can do voluntary internships in addition to the compulsory "
+            "IE 300 and IE 400 summer practices. For voluntary internships, METU provides SGK "
+            "insurance for a maximum of one month, for only one organization. "
+            "IMPORTANT: Foreign (international) students are NOT allowed to do voluntary "
+            "internships in Turkey — a work permit is required. "
+            "Apply through OCW using the voluntary internship form."
+        ),
+        "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
+    },
+    {
+        "question": "Staj raporumu Türkçe yazabilir miyim?",
+        "answer": (
+            "Hayır. Staj raporları İngilizce yazılmalıdır. Bu kural hem IE 300 hem de IE 400 "
+            "için geçerlidir. Rapor, mürekkeple yazılmalı veya daktilo/bilgisayarla yazılmalıdır. "
+            "Detaylar için SP manuallerini inceleyiniz."
+        ),
+        "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
+    },
+    {
+        "question": "Stajıma kaç gün kaldı ve hâlâ OCW formunu doldurmadım, ne yapmalıyım?",
+        "answer": (
+            "SGK başvurusu OCW üzerinden staj başlangıcınızdan en az 10 iş günü önce yapılmalıdır. "
+            "Eğer bu süreyi kaçırdıysanız, derhal ie-staj@metu.edu.tr adresine mail atarak "
+            "durumunuzu açıklayın. Acil durumlarda komite size yardımcı olabilir, ancak "
+            "geç başvurularda sigorta başlangıç tarihiniz gecikebilir. "
+            "Formunuzu doldurup gönderdikten sonra e-Devlet üzerinden SGK kaydınızı takip edin."
+        ),
+        "source_url": "https://sp-ie.metu.edu.tr/en/steps-follow",
+    },
+    {
+        "question": "Staj sırasında şirket değiştirmem gerekirse ne yapmalıyım?",
+        "answer": (
+            "Staj sırasında şirket değiştirmeniz gerekirse, önce ie-staj@metu.edu.tr adresine "
+            "mail atarak durumu bildirin. Eski SGK başvurunuzun iptali ve yeni şirket için "
+            "yeni SGK başvurusu yapılması gerekecektir. Yeni şirket için ayrı bir SP Application "
+            "Form doldurmanız gerekir. Toplam staj sürenizin minimum gereklilikleri karşıladığından "
+            "emin olun (IE 300: 20 iş günü, IE 400: 20 veya 30 iş günü)."
+        ),
+        "source_url": "https://sp-ie.metu.edu.tr/en/steps-follow",
     },
 ]
 
