@@ -458,18 +458,41 @@ if user_input:
 
         st.markdown(answer)
 
-        # ── Sources (same logic) ──
+        # ── Sources — smart handling for web URLs vs local files ──
         sources_html = ""
         if results:
             seen = set()
             pills = []
+            # SP website download page — redirect local files here
+            SP_DOCS_URL = "https://sp-ie.metu.edu.tr/en/documentsforms"
             for r in results:
-                url = r["source_url"].rstrip(".,;:!? ")  # FIX #6: strip trailing punctuation
-                if url not in seen:
-                    seen.add(url)
+                url = r["source_url"].rstrip(".,;:!? ")
+                title = r["page_title"]
+                if url in seen:
+                    continue
+                seen.add(url)
+
+                if url.startswith("local_file://"):
+                    # Local files can't be opened in browser — redirect to SP docs page
+                    fname = url.replace("local_file://", "")
+                    ext = fname.rsplit(".", 1)[-1].lower() if "." in fname else ""
+                    if ext in ("doc", "docx"):
+                        icon = "📄"
+                        tooltip = f"title=\"{fname} — download from SP website\""
+                    else:
+                        icon = "📎"
+                        tooltip = f"title=\"{fname} — available on SP website\""
                     pills.append(
-                        f'<a href="{url}" target="_blank" rel="noopener noreferrer" class="src-pill">'
-                        f'🔗 {r["page_title"]}</a>'
+                        f'<a href="{SP_DOCS_URL}" target="_blank" '
+                        f'rel="noopener noreferrer" class="src-pill" {tooltip}>'
+                        f'{icon} {title}</a>'
+                    )
+                else:
+                    # Normal web URL — open directly
+                    pills.append(
+                        f'<a href="{url}" target="_blank" '
+                        f'rel="noopener noreferrer" class="src-pill">'
+                        f'🔗 {title}</a>'
                     )
             sources_html = f'<div class="src-label">Sources</div>{"".join(pills)}'
             st.markdown(sources_html, unsafe_allow_html=True)
