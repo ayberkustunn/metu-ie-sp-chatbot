@@ -12,8 +12,11 @@ KNOWLEDGE_CHUNKS = [
         "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
         "page_title": "General Information",
         "content": (
-            "Summer internships must be done by physically attending the work place. "
-            "Remote or online internships are not accepted."
+            "Summer practice attendance rules depend on the course and company type. "
+            "IE 300 (manufacturing): must be fully face-to-face at the company/plant. "
+            "IE 400 at a manufacturing company: must be fully face-to-face at the company/plant. "
+            "IE 400 at a service company: can be face-to-face OR hybrid (face-to-face + online). "
+            "Fully remote or fully online internships are not accepted for any summer practice."
         ),
     },
     {
@@ -870,8 +873,12 @@ CURATED_FAQ = [
     {
         "question": "Can I do summer practice online or remotely?",
         "answer": (
-            "No. Summer internships must be done by physically attending the workplace. "
-            "Remote or online internships are not accepted."
+            "Fully remote or fully online internships are not accepted for any summer practice. "
+            "However, attendance rules vary by case: "
+            "IE 300: must be fully face-to-face (manufacturing company only). "
+            "IE 400 at a manufacturing company: must be fully face-to-face. "
+            "IE 400 at a service company: can be face-to-face OR hybrid (face-to-face + online). "
+            "So hybrid is possible only for IE 400 at a service company."
         ),
         "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
     },
@@ -935,10 +942,11 @@ CURATED_FAQ = [
     {
         "question": "Can IE 400 internship be hybrid or partially remote?",
         "answer": (
-            "No. All summer practices (IE 300 and IE 400) must be done by physically "
-            "attending the workplace. Hybrid, remote, or online internships are not accepted. "
-            "However, for IE 400 project-based internships (minimum 6 weeks), "
-            "you may work on a specific project under supervision at the company."
+            "It depends on the company type. "
+            "IE 400 at a manufacturing company: NO — must be fully face-to-face at the plant. "
+            "IE 400 at a service company: YES — can be face-to-face or hybrid (face-to-face + online). "
+            "Fully remote/online is never accepted for any summer practice. "
+            "So hybrid is an option for IE 400, but only if your company is a service company."
         ),
         "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
     },
