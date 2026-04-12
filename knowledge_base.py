@@ -750,6 +750,37 @@ KNOWLEDGE_CHUNKS = [
             "Always check ODTUClass for the exact due date for your specific academic year."
         ),
     },
+    # ── NEW: Year-specific report deadlines from uploaded intro files ─────
+    {
+        "id": "deadline-ie300-2025-2026",
+        "topic": "IE 300 Report Deadline — 2025-2026 Academic Year",
+        "source_url": "local_file://ie300_introduction_2025-2.pdf",
+        "page_title": "IE 300 Introduction Slides 2025-2026",
+        "content": (
+            "IE 300 report deadline for the 2025-2026 academic year: October 24, 2025. "
+            "Source: IE 300 Introductory Session slides (2025-2026). "
+            "After completing your summer practice in Summer 2025, you must register for "
+            "IE 300 in the immediate following academic term (Fall 2025-2026). "
+            "Reports are due within the first 4 weeks of that term. "
+            "NOTE: This deadline is specific to the 2025-2026 academic year. "
+            "For other years, check the introduction slides and ODTUClass for the updated due date."
+        ),
+    },
+    {
+        "id": "deadline-ie400-2025-2026",
+        "topic": "IE 400 Report Deadline — 2025-2026 Academic Year",
+        "source_url": "local_file://ie400_introduction_2025.pdf",
+        "page_title": "IE 400 Introduction Slides 2025-2026",
+        "content": (
+            "IE 400 report deadline for the 2025-2026 academic year: October 24, 2025. "
+            "Source: IE 400 Introductory Session slides (2025-2026). "
+            "After completing your summer practice in Summer 2025, you must register for "
+            "IE 400 in the immediate following academic term (Fall 2025-2026). "
+            "Reports are due within the first 4 weeks of that term. "
+            "NOTE: This deadline is specific to the 2025-2026 academic year. "
+            "For other years, check the introduction slides and ODTUClass for the updated due date."
+        ),
+    },
     # ── NEW: IE 400 Report Structure ─────────────────────────────────────
     {
         "id": "ie400-report-structure",
@@ -885,9 +916,14 @@ CURATED_FAQ = [
     {
         "question": "Where do I submit my SP report?",
         "answer": (
-            "SP reports are collected via ODTUClass. The deadline will be announced on "
-            "ODTUClass and it is a strict deadline. Reports must be in PDF format. "
-            "You must register for IE300 or IE400 during the registration period."
+            "SP reports are collected via ODTUClass in PDF format. "
+            "For the 2025-2026 academic year, the due date is October 24, 2025 "
+            "(source: IE 300 and IE 400 intro slides 2025-2026). "
+            "This is a strict deadline — late submissions are not accepted. "
+            "You must register for IE 300 or IE 400 during the registration period of the "
+            "Fall semester following your summer practice. "
+            "NOTE: For other academic years, check the current intro slides and ODTUClass "
+            "for the exact deadline."
         ),
         "source_url": "https://sp-ie.metu.edu.tr/en/steps-follow",
     },
@@ -1010,11 +1046,14 @@ CURATED_FAQ = [
     {
         "question": "When is the SP report submission deadline?",
         "answer": (
-            "SP reports are due within the first two weeks of the following academic term "
-            "(Fall semester for summer internships). The exact deadline is announced on ODTUClass. "
+            "For the 2025-2026 academic year, the report due date for both IE 300 and IE 400 is "
+            "October 24, 2025 (source: IE 300 and IE 400 Introductory Session slides 2025-2026). "
+            "Reports are due within the first 4 weeks of the Fall semester following your summer practice. "
             "This is a STRICT deadline — late submissions are not accepted. "
-            "You must also fill out the online questionnaire by the submission deadline, "
-            "otherwise your report is considered incomplete."
+            "You must also fill out the online questionnaire by this deadline, otherwise your report "
+            "is considered incomplete. "
+            "NOTE: This date applies to the 2025-2026 year. For other years, always check the "
+            "current introduction slides and ODTUClass for the exact due date."
         ),
         "source_url": "https://sp-ie.metu.edu.tr/en/steps-follow",
     },
