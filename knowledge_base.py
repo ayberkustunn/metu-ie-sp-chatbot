@@ -1039,9 +1039,9 @@ CURATED_FAQ = [
             "from the company during their internship. "
             "(2) 'Beyanname - Sağlık Hizmeti Almayan' — for students who will NOT receive health services. "
             "Choose the one that matches your situation, print and sign it, and submit via OCW. "
-            "Download both from sp-ie.metu.edu.tr/en/documentsforms"
+            "Download both from sp-ie.metu.edu.tr/en"
         ),
-        "source_url": "https://sp-ie.metu.edu.tr/en/documentsforms",
+        "source_url": "https://sp-ie.metu.edu.tr/en",
     },
     {
         "question": "When is the SP report submission deadline?",
@@ -1083,9 +1083,9 @@ CURATED_FAQ = [
             "Yes. You must fill out a separate SP Application Form for each company where you plan "
             "to do your internship. There are different forms for IE 300 and IE 400, and for "
             "Turkish and English versions. Download the correct form from "
-            "sp-ie.metu.edu.tr/en/documentsforms"
+            "sp-ie.metu.edu.tr/en"
         ),
-        "source_url": "https://sp-ie.metu.edu.tr/en/documentsforms",
+        "source_url": "https://sp-ie.metu.edu.tr/en",
     },
     {
         "question": "What is the difference between IE 300 and IE 400?",
@@ -1154,9 +1154,9 @@ CURATED_FAQ = [
             "(3) SGK insurance application via OCW (at least 10 days before start), "
             "(4) For paid SP: Paid SP Form, İşsizlik Fonu Bilgi Formu, bank receipt, "
             "(5) Evaluation Form (filled by employer at end of internship, sent to sp-belge@metu.edu.tr). "
-            "Download all forms from sp-ie.metu.edu.tr/en/documentsforms"
+            "Download all forms from sp-ie.metu.edu.tr/en"
         ),
-        "source_url": "https://sp-ie.metu.edu.tr/en/documentsforms",
+        "source_url": "https://sp-ie.metu.edu.tr/en",
     },
     {
         "question": "Can I do a voluntary (gönüllü) internship?",
