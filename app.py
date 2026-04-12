@@ -464,7 +464,7 @@ if user_input:
             seen = set()
             pills = []
             # SP website download page — redirect local files here
-            SP_DOCS_URL = "https://sp-ie.metu.edu.tr/en/documentsforms"
+            SP_DOCS_URL = "https://sp-ie.metu.edu.tr/en"
             for r in results:
                 url = r["source_url"].rstrip(".,;:!? ")
                 title = r["page_title"]
