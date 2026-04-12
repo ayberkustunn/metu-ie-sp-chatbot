@@ -945,8 +945,9 @@ CURATED_FAQ = [
     {
         "question": "What are the exact prerequisite courses for IE 300?",
         "answer": (
-            "To register for IE 300, you must have completed: IE 220 (OR), IE 222 (Probability & Statistics I), "
-            "and IE 256 (Statistics II). You also need to have completed at least 4 semesters. "
+            "To register for IE 300, you must have completed ALL of these: "
+            "OHS 101, IE 102, IE 241, IE 251, IE 265, plus at least one of IE 252 or IE 266. "
+            "IE 300 is typically taken in the 5th semester (3rd year). "
             "Check the full prerequisite chain at ie.metu.edu.tr/en/prerequisite-chain"
         ),
         "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
@@ -954,10 +955,10 @@ CURATED_FAQ = [
     {
         "question": "What are the exact prerequisite courses for IE 400?",
         "answer": (
-            "To register for IE 400, you must have completed IE 300 plus: IE 252 (Modeling and "
-            "Methods in Optimization), IE 323 (Simulation), IE 333 (Production Planning and "
-            "Control), and any one of IE 348/IE 362/IE 372/IE 376. You also need "
-            "6 semesters completed. Check ie.metu.edu.tr/en/prerequisite-chain for details."
+            "To register for IE 400, you must have completed IE 300 plus: IE 252, IE 323, "
+            "IE 333, and any TWO of the following: IE 304, IE 324, IE 368, IE 372. "
+            "IE 400 is typically taken in the 7th semester (4th year). "
+            "Check ie.metu.edu.tr/en/prerequisite-chain for details."
         ),
         "source_url": "https://sp-ie.metu.edu.tr/en/general-information",
     },
